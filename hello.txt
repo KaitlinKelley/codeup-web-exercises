@@ -1,3 +1,5 @@
 Hello
 Hola
 Hallo
+Ni hao
+Konnichiwa
