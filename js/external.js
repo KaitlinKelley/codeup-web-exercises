@@ -110,13 +110,13 @@ alert("Welcome to my website!");
 //If they are a premium member, the number of items does not matter.
 //If they are NOT a premium member, they must buy MORE than 2 items ==> have to use OR (||)
 
-var numberOfItems = Number(prompt("How many items for checkout?")); //result is number
-var offerIsValid = confirm("Is the offer valid?"); //result is boolean
-var isPremiumMember = confirm("Are you a premium member?"); //result is boolean
-
-//true && (true || false)
-//true && (false || true)
-//false && (doesn't matter what this is)
-var productOfferApply = offerIsValid && (isPremiumMember || (numberOfItems > 2)); //result is boolean
-
-alert("Product discount applied?: " + productOfferApply);
+// var numberOfItems = Number(prompt("How many items for checkout?")); //result is number
+// var offerIsValid = confirm("Is the offer valid?"); //result is boolean
+// var isPremiumMember = confirm("Are you a premium member?"); //result is boolean
+//
+// //true && (true || false)
+// //true && (false || true)
+// //false && (doesn't matter what this is)
+// var productOfferApply = offerIsValid && (isPremiumMember || (numberOfItems > 2)); //result is boolean
+//
+// alert("Product discount applied?: " + productOfferApply);
