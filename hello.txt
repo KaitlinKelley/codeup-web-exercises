@@ -4,4 +4,10 @@ Hallo
 Ni hao
 Konnichiwa
 Yooooo
+<<<<<<< HEAD
 Hi!!!
+=======
+
+Hi again.
+>>>>>>> 50388e5ff3edf4e5960c00bea3ce3d19d1ae0b07
+Working on second branch
