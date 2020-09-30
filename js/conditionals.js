@@ -239,60 +239,56 @@
      * HINT: The way we prompt for a value could be improved
      */
 
-        //First Attempt Here, ACTUALLY WORKS!!
-
-    var wantToEnterNumber = confirm("Would you like to enter a number?");
-
-    if (wantToEnterNumber) {
-        var userInput = parseInt(prompt("Please enter a number."));
-    }
-
-    function isNotANumber(num){
-        if (userInput === undefined){
-            alert("That is not a valid number.");
-        } else if (userInput === NaN){
-            alert("That is not a valid number.");
-        } else {
-            console.log("Something weird happened with isNotANumber")
-        }
-    }
-
-    function isOdd(num){
-        if (userInput % 2 === 0){
-            alert(userInput + " is an even number.");
-        } else if (userInput % 2 !== 0){
-            alert(userInput + " is an odd number.");
-        } else {
-            console.log("Something weird happened with isOdd")
-        }
-    }
-
-
-    function plus100(num){
-        alert(userInput + " + 100 is: " + (userInput + 100));
-    }
-
-
-    function negOrPos(num){
-        if (userInput > 0){
-            alert(userInput + " is a positive number.");
-        } else if (userInput < 0){
-            alert(userInput + " is a negative number.");
-        } else if (userInput === 0){
-            alert(userInput + " is neither positive nor negative.");
-        } else {
-            console.log("Something weird happened with negOrPos");
-        }
-    }
-
-
-
-    if (wantToEnterNumber){
-         isNotANumber(userInput);
-         isOdd(userInput);
-         plus100(userInput);
-         negOrPos(userInput);
-    }
+    //     // First Attempt Here, MOSTLY WORKS
+    //
+    // var wantToEnterNumber = confirm("Would you like to enter a number?");
+    //
+    // if (wantToEnterNumber) {
+    //     var userInput = parseInt(prompt("Please enter a number."));
+    // }
+    //
+    // function isNotANumber(num){
+    //     if (userInput === NaN){
+    //         alert("That is not a valid number.");
+    //     }
+    // }
+    //
+    // function isOdd(num){
+    //     if (userInput % 2 === 0){
+    //         alert(userInput + " is an even number.");
+    //     } else if (userInput % 2 !== 0){
+    //         alert(userInput + " is an odd number.");
+    //     } else {
+    //         console.log("Something weird happened with isOdd")
+    //     }
+    // }
+    //
+    //
+    // function plus100(num){
+    //     alert(userInput + " + 100 is: " + (userInput + 100));
+    // }
+    //
+    //
+    // function negOrPos(num){
+    //     if (userInput > 0){
+    //         alert(userInput + " is a positive number.");
+    //     } else if (userInput < 0){
+    //         alert(userInput + " is a negative number.");
+    //     } else if (userInput === 0){
+    //         alert(userInput + " is neither positive nor negative.");
+    //     } else {
+    //         console.log("Something weird happened with negOrPos");
+    //     }
+    // }
+    //
+    //
+    //
+    // if (wantToEnterNumber){
+    //      isNotANumber(userInput);
+    //      isOdd(userInput);
+    //      plus100(userInput);
+    //      negOrPos(userInput);
+    // }
 
 
         //Second Attempt Here, DOES NOT WORK
@@ -367,8 +363,28 @@
     //         alert(userInput + 100);
     //     }
     // }
+    //
+    //
 
-
+//     //UNFINISHED ATTEMPT HERE
+//     var enterNumber = confirm("Would you like to enter a number?");
+// function numberFacts(){
+//
+//     if(enterNumber === false){
+//         alert("Well, fine then.");
+//     } else if(enterNumber === true){
+//         var magicNumber = prompt("Please enter a number.");
+//         if ((magicNumber % 2) === 0){
+//             alert("that's an even number");
+//         } else if((magicNumber % 2) !== 0);{
+//             alert("that's an odd number");
+//         }
+//     }
+//
+//
+//
+//
+// }
 
 
 
