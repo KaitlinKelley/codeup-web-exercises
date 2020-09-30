@@ -268,19 +268,19 @@ console.log("hello from conditionals lec.js!");
     //TODO Together: refactor the above statement as a function
 
 
-    function whatIsTheWeather(weatherString){
-        if(weatherString === "snowing"){
-            return("It's snowing!");
-        } else if(weatherString === "raining"){
-            return("It's raining");
-        } else {
-            return("Have a nice day!");
-        }
-    }
-
-    console.log(whatIsTheWeather("raining"));
-    console.log(whatIsTheWeather("snowing"));
-    console.log(whatIsTheWeather("windy"));
+    // function whatIsTheWeather(weatherString){
+    //     if(weatherString === "snowing"){
+    //         return("It's snowing!");
+    //     } else if(weatherString === "raining"){
+    //         return("It's raining");
+    //     } else {
+    //         return("Have a nice day!");
+    //     }
+    // }
+    //
+    // console.log(whatIsTheWeather("raining"));
+    // console.log(whatIsTheWeather("snowing"));
+    // console.log(whatIsTheWeather("windy"));
 
 
 // Together: PIZZA PREFERENCE EXAMPLE
@@ -398,25 +398,63 @@ console.log("hello from conditionals lec.js!");
 // =============== SWITCH STATEMENT ================
 //TODO Together:
 
-var pizzaPreference = prompt("What kind of pizza do you like?");
-
-switch(pizzaPreference) {
-    case "pineapple and hot sauce":
-        alert("What a coincidence, that's my favorite!");
-        break;
-    case "cheese":
-        alert("Just plain cheese? Okay...");
-        break;
-    default:
-        alert(pizzaPreference + " isn't my favorite, but let's order some!");
-        break;
-}
+// var pizzaPreference = prompt("What kind of pizza do you like?");
+//
+// switch(pizzaPreference) {
+//     case "pineapple and hot sauce":
+//         alert("What a coincidence, that's my favorite!");
+//         break;
+//     case "cheese":
+//         alert("Just plain cheese? Okay...");
+//         break;
+//     default:
+//         alert(pizzaPreference + " isn't my favorite, but let's order some!");
+//         break;
+// }
 
 
 //TODO: Write a switch statement that evaluates weather as the condition. Check for "rainy", "sunny", "snow", and a default case.
 
+// var currentWeather = prompt("What's the weather like?");
+// switch(currentWeather){
+//     case "rainy":
+//         alert("It's rainy.");
+//         break;
+//     case "sunny":
+//         alert("It's sunny.");
+//         break;
+//     case "snow:":
+//         alert("It's snowing.");
+//         break;
+//     default:
+//         alert("I don't know what the weather is.");
+//         break;
+// }
+
 
 //TODO: Rewrite the intersection function from earlier as a switch statement.
+
+// var colorInput = (prompt("What color is the traffic light?")).toLowerCase();
+// function whatToDoAtLight(stringColor){
+//     switch(colorInput){
+//         case "red":
+//             return "Stop! Stop now!";
+//             break;
+//         case "yellow":
+//             return "Slow down and prepare to stop. Or just floor it.";
+//             break;
+//         case "green":
+//             return "You're good! Keep going!";
+//             break;
+//         default:
+//             return "Please input a valid color and refresh page."
+//             break;
+//     }
+// }
+//
+// console.log(whatToDoAtLight(colorInput));
+
+
 
 
 
@@ -426,9 +464,36 @@ switch(pizzaPreference) {
 
 // 1) https://mdn.github.io/learning-area/javascript/building-blocks/allowance-updater.html
 
+        // var isShoppingDone = confirm("Did you do the shopping?");
+        //
+        // function giveAllowance(boolean){
+        //     if (isShoppingDone){
+        //         return "Give the kid $5."
+        //     } else {
+        //         return "No allowance for you until you do the shopping."
+        //     }
+        // }
+        //
+        // console.log(giveAllowance(isShoppingDone));
 
 // 2) https://mdn.github.io/learning-area/javascript/building-blocks/simple-else-if.html
 
+        // var weather = prompt("Please select a weather type from this dropdown menu.")
+        // if (weather === "Sunny"){
+        //     alert("Sunny");
+        // } else if (weather === "Rainy"){
+        //     alert("Rainy");
+        // } else if (weather === "Snowing"){
+        //     alert("Snowing");
+        // } else if (weather === "Overcast"){
+        //     alert("Overcast");
+        // }
 
+
+
+//
+//
 // 3) https://mdn.github.io/learning-area/javascript/building-blocks/simple-ternary.html
+
+//(colorSelect === black) ? "Turn page black" : "Keep page white";
 
