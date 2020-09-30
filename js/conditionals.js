@@ -136,18 +136,18 @@
      */
 
 
-    // function calculateTotal(luckyNumber, totalAmount){
-    //     if(luckyNumber === 0){
+    // function calculateTotal(luckyNum, totalAmount){
+    //     if(luckyNum === 0){
     //         return (totalAmount - (0*totalAmount)).toFixed(2);
-    //     } else if(luckyNumber === 1){
+    //     } else if(luckyNum === 1){
     //         return (totalAmount - (.10*totalAmount)).toFixed(2);
-    //     } else if(luckyNumber === 2){
+    //     } else if(luckyNumb === 2){
     //         return (totalAmount - (.25*totalAmount)).toFixed(2);
-    //     } else if(luckyNumber === 3){
+    //     } else if(luckyNum === 3){
     //         return (totalAmount - (.35*totalAmount)).toFixed(2);
-    //     } else if(luckyNumber === 4){
+    //     } else if(luckyNum === 4){
     //         return (totalAmount - (.5*totalAmount)).toFixed(2);
-    //     } else if(luckyNumber === 5){
+    //     } else if(luckyNum === 5){
     //         return (totalAmount - (1*totalAmount)).toFixed(2);
     //     }
     // }
@@ -155,7 +155,40 @@
     // console.log(calculateTotal(1, 100));//expect 90.00
     // console.log(calculateTotal(2, 20));//expect 15.00
     // console.log(calculateTotal(5, 500));//expect 0.00
+    // //can also do just one return statement at the end, and reassign the variable with each if/else statement, assuming you assigned a discountedTotal variable at the beginning.????
 
+
+    // //Stuff rewritted as a switch statement
+    // function calculateTotal(luckyNum, totalAmount){
+    //     var discountedPrice;
+    //     switch (lucklyNum){
+    //         case 0:
+    //             discountedPrice = totalAmount;
+    //             break;
+    //         case 1:
+    //             discountedPrice = totalAmount - (totalAmount * .10);
+    //             break;
+    //         case 2:
+    //             discountedPrice = totalAmount - (totalAmount * .25);
+    //             break;
+    //         case 3:
+    //             discountedPrice = totalAmount - (totalAmount * .35);
+    //             break;
+    //         case 4:
+    //             discountedPrice = totalAmount - (totalAmount * .50);
+    //             break;
+    //         case 5:
+    //             discountedPrice = totalAmount - (totalAmount * 1);
+    //             break;
+    //         default:
+    //             discountedPrice = 0;
+    //             break;
+    //     }
+    //
+    //     return discountedPrice;
+    // }
+    //
+    //     console.log(calculateTotal(3, 300));
 
     /**
      * TODO:
@@ -183,9 +216,11 @@
 //             return (totalAmount - (1*totalAmount)).toFixed(2);
 //         }
 //     }
+//
+//     var brandNewTotal = calculateTotal(luckyNumber, totalAmount);
 //     alert("Your lucky number was: " + luckyNumber);
-//     alert("Your price before the discount was: " + totalAmount);
-//     alert("Your new price is: " + (calculateTotal(luckyNumber, totalAmount)));
+//     alert("Your price before the discount was: $" + totalAmount);
+//     alert("Your new price is: $" + brandNewTotal);
 
     /**
      * TODO:
@@ -204,57 +239,60 @@
      * HINT: The way we prompt for a value could be improved
      */
 
-        //First Attempt Here, DOES NOT WORK
-    //
-    // var wantToEnterNumber = confirm("Would you like to enter a number?");
-    // var userInput = parseInt(prompt("Please enter a number."));
-    //
-    // function isNotANumber(num){
-    //     if (userInput === undefined){
-    //         alert("That is not a valid number.");
-    //     } else if (userInput == NaN){
-    //         alert("That is not a valid number.");
-    //     } else {
-    //         console.log("Something weird happened with isNotANumber")
-    //     }
-    // }
-    //
-    // function isOdd(num){
-    //     if (userInput % 2 === 0){
-    //         alert(userInput + " is an even number.");
-    //     } else if (userInput % 2 !== 0){
-    //         alert(userInput + " is an odd number.");
-    //     } else {
-    //         console.log("Something weird happened with isOdd")
-    //     }
-    // }
-    //
-    //
-    // function plus100(num){
-    //     alert(userInput + " + 100 is: " + (userInput + 100));
-    // }
-    //
-    //
-    // function negOrPos(num){
-    //     if (userInput > 0){
-    //         alert(userInput + " is a positive number.");
-    //     } else if (userInput < 0){
-    //         alert(userInput + " is a negative number.");
-    //     } else if (userInput === 0){
-    //         alert(userInput + " is neither positive nor negative.");
-    //     } else {
-    //         console.log("Something weird happened with negOrPos");
-    //     }
-    // }
-    //
-    //
-    //
-    // if (wantToEnterNumber){
-    //      isNotANumber(userInput);
-    //      isOdd(userInput);
-    //      plus100(userInput);
-    //      negOrPos(userInput);
-    // }
+        //First Attempt Here, ACTUALLY WORKS!!
+
+    var wantToEnterNumber = confirm("Would you like to enter a number?");
+
+    if (wantToEnterNumber) {
+        var userInput = parseInt(prompt("Please enter a number."));
+    }
+
+    function isNotANumber(num){
+        if (userInput === undefined){
+            alert("That is not a valid number.");
+        } else if (userInput === NaN){
+            alert("That is not a valid number.");
+        } else {
+            console.log("Something weird happened with isNotANumber")
+        }
+    }
+
+    function isOdd(num){
+        if (userInput % 2 === 0){
+            alert(userInput + " is an even number.");
+        } else if (userInput % 2 !== 0){
+            alert(userInput + " is an odd number.");
+        } else {
+            console.log("Something weird happened with isOdd")
+        }
+    }
+
+
+    function plus100(num){
+        alert(userInput + " + 100 is: " + (userInput + 100));
+    }
+
+
+    function negOrPos(num){
+        if (userInput > 0){
+            alert(userInput + " is a positive number.");
+        } else if (userInput < 0){
+            alert(userInput + " is a negative number.");
+        } else if (userInput === 0){
+            alert(userInput + " is neither positive nor negative.");
+        } else {
+            console.log("Something weird happened with negOrPos");
+        }
+    }
+
+
+
+    if (wantToEnterNumber){
+         isNotANumber(userInput);
+         isOdd(userInput);
+         plus100(userInput);
+         negOrPos(userInput);
+    }
 
 
         //Second Attempt Here, DOES NOT WORK
@@ -307,28 +345,28 @@
 
         //Third Attempt Here, DOES NOT WORK
 
-    var wantsToEnterNumber = confirm("Would you like to enter a number?");
-    var userInput = parseInt(prompt("Please enter a number."));
-
-    if (!wantsToEnterNumber){
-        alert("Fine, be that way.");
-    } else {
-        if (userInput === NaN){
-            alert("That is not a valid number. Please refresh the page and try again.");
-        } else if (userInput%2 === 0){
-            alert("That is an even number.");
-        } else if (userInput%2 !== 0){
-            alert("That is an odd number.");
-        } else if (userInput > 0){
-            alert("That is a positive number.");
-        } else if (userInput < 0){
-            alert("That is a negative number.");
-        } else if (userInput === 0){
-            alert("Zero is zero.");
-        } else {
-            alert(userInput + 100);
-        }
-    }
+    // var wantsToEnterNumber = confirm("Would you like to enter a number?");
+    // var userInput = parseInt(prompt("Please enter a number."));
+    //
+    // if (!wantsToEnterNumber){
+    //     alert("Fine, be that way.");
+    // } else {
+    //     if (userInput === NaN){
+    //         alert("That is not a valid number. Please refresh the page and try again.");
+    //     } else if (userInput%2 === 0){
+    //         alert("That is an even number.");
+    //     } else if (userInput%2 !== 0){
+    //         alert("That is an odd number.");
+    //     } else if (userInput > 0){
+    //         alert("That is a positive number.");
+    //     } else if (userInput < 0){
+    //         alert("That is a negative number.");
+    //     } else if (userInput === 0){
+    //         alert("Zero is zero.");
+    //     } else {
+    //         alert(userInput + 100);
+    //     }
+    // }
 
 
 
