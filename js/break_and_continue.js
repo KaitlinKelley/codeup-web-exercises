@@ -38,21 +38,21 @@
 
 
 
-do {
-    var numberToSkip = parseInt(prompt("Please enter an odd number between 1 and 50."));
-
-} while((numberToSkip % 2 === 0) || (numberToSkip < 1) || (numberToSkip >= 50));
-
-
-for (var i = 0; i < 50; i++){
-    if (i %2 === 0){
-        continue;
-    } else if ( i === numberToSkip){
-        console.log("Yikes! Skipping number: " + i)
-        continue;
-    } else if (i % 2 !== 0){
-        console.log("Here is an odd number: " + i)
-        continue;
-
-    }
-}
+// do {
+//     var numberToSkip = parseInt(prompt("Please enter an odd number between 1 and 50."));
+//
+// } while((numberToSkip % 2 === 0) || (numberToSkip < 1) || (numberToSkip >= 50));
+//
+//
+// for (var i = 0; i < 50; i++){
+//     if (i %2 === 0){
+//         continue;
+//     } else if ( i === numberToSkip){
+//         console.log("Yikes! Skipping number: " + i)
+//         continue;
+//     } else if (i % 2 !== 0){
+//         console.log("Here is an odd number: " + i)
+//         continue;
+//
+//     }
+// }
