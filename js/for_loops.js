@@ -55,8 +55,8 @@
 //
 //DONE
 // 3. Create a for loop that uses console.log to create the output shown below.
-//
-//
+
+
 // 1
 // 22
 // 333

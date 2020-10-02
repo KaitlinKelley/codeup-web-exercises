@@ -28,3 +28,67 @@
 //     console.log(2**i);
 //     i++;
 // }
+
+// Do While Loop
+// An ice cream seller can't go home until she sells all of her cones. First write enough code that generates a random number between 50 and 100 representing the amount of cones to sell before you start your loop. Inside of the loop your code should generate another random number between 1 and 5, simulating the amount of cones being bought by her clients. Use a do-while loop to log to the console the amount of cones sold to each person. This is a way get the random numbers for this exercise.
+
+// Get total cones
+// Get cones bought by one customer
+// Print log message accordingly
+// Subtract values to get new total
+// Get cones bought by next customer
+// Print log message accordingly
+// Subtract values to get new total
+
+
+//THE VERSION BELOW IS THE ONE I AM CURRENTLY WORKING ON, USE THIS ONE!!!!!!!!!!!
+var totalCones = Math.floor(Math.random() * 50) + 100;
+
+do {
+    var conesBought = Math.floor(Math.random() * 5) + 1;
+    if (conesBought <= totalCones){
+        console.log(conesBought + " cones sold.");
+    } else if (conesBought > totalCones){
+        console.log("I cannot sell you " + conesBought + ", I only have " + totalCones + " left.");
+    } else if (conesBought === totalCones){
+        console.log("Yay, I sold them all!! I can go home now.")
+    }
+    totalCones -= conesBought;
+
+} while (totalCones > 0)
+
+
+// // This is how you get a random number between 50 and 100
+// var totalCones = Math.floor(Math.random() * 50) + 50;
+// // This expression will generate a random number between 1 and 5
+// var conesBought = Math.floor(Math.random() * 5) + 1;
+
+// var totalCones = Math.floor(Math.random() * 50) + 100;
+//
+// do {
+//     var conesToBuy = Math.floor(Math.random() * 5) + 1;
+//     console.log(totalCones - conesToBuy);
+//
+// } while (totalCones > 0);
+
+// do {
+//     var conesToBuy = Math.floor(Math.random() * 5) + 1;
+//     var conesLeft = totalCones - conesToBuy
+//     if(conesToBuy < totalCones){
+//         console.log(conesToBuy + " cones sold.");
+//     } else if(conesToBuy > totalCones){
+//         console.log("I cannot sell you" + conesBought + "I only have" + totalCones);
+//     } else if(totalCones === 0){
+//         console.log("Yay, I sold them all!");
+//     }
+//
+// } while (totalCones > 0)
+
+
+
+
+// The output should be similar to the following:
+//
+//     5 cones sold...  // if there are enough cones
+// Cannot sell you 6 cones I only have 3...  // If there are not enough cones
+// Yay! I sold them all! // If there are no more cones
