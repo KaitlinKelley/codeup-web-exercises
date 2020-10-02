@@ -56,8 +56,8 @@
 // - `colors`: a list of the colors of the rainbow
 // - `randomColor`: contains a single random color value from the list (this
 //                  will contain a different color every time the page loads)
-    var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
-    var randomColor = colors[Math.floor(Math.random() * colors.length)];
+//     var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+//     var randomColor = colors[Math.floor(Math.random() * colors.length)];
     /**
      * TODO:
      * Pass the `randomColor` variable to your function and console.log the results.
@@ -239,56 +239,55 @@
      * HINT: The way we prompt for a value could be improved
      */
 
-    //     // First Attempt Here, MOSTLY WORKS
-    //
-    // var wantToEnterNumber = confirm("Would you like to enter a number?");
-    //
-    // if (wantToEnterNumber) {
-    //     var userInput = parseInt(prompt("Please enter a number."));
-    // }
-    //
-    // function isNotANumber(num){
-    //     if (userInput === NaN){
-    //         alert("That is not a valid number.");
-    //     }
-    // }
-    //
-    // function isOdd(num){
-    //     if (userInput % 2 === 0){
-    //         alert(userInput + " is an even number.");
-    //     } else if (userInput % 2 !== 0){
-    //         alert(userInput + " is an odd number.");
-    //     } else {
-    //         console.log("Something weird happened with isOdd")
-    //     }
-    // }
-    //
-    //
-    // function plus100(num){
-    //     alert(userInput + " + 100 is: " + (userInput + 100));
-    // }
-    //
-    //
-    // function negOrPos(num){
-    //     if (userInput > 0){
-    //         alert(userInput + " is a positive number.");
-    //     } else if (userInput < 0){
-    //         alert(userInput + " is a negative number.");
-    //     } else if (userInput === 0){
-    //         alert(userInput + " is neither positive nor negative.");
-    //     } else {
-    //         console.log("Something weird happened with negOrPos");
-    //     }
-    // }
-    //
-    //
-    //
-    // if (wantToEnterNumber){
-    //      isNotANumber(userInput);
-    //      isOdd(userInput);
-    //      plus100(userInput);
-    //      negOrPos(userInput);
-    // }
+    //     // First Attempt Here, OH MY GOD IT WORKS HOLY BLEEP
+
+    var wantToEnterNumber = confirm("Would you like to enter a number?");
+
+    if (wantToEnterNumber) {
+        var userInput = Number(prompt("Please enter a number."));
+        if (isNaN(userInput)){
+            alert("That is not a valid number.");
+        } else {
+            isOdd(userInput);
+            plus100(userInput);
+            negOrPos(userInput);
+        }
+    } else {
+        alert("Aw, you're no fun.");
+    }
+
+
+
+
+    function isOdd(num){
+        if (userInput % 2 === 0){
+            alert(userInput + " is an even number.");
+        } else if (userInput % 2 !== 0){
+            alert(userInput + " is an odd number.");
+        } else {
+            console.log("Something weird happened with isOdd")
+        }
+    }
+
+
+    function plus100(num){
+        alert(userInput + " + 100 is: " + (userInput + 100));
+    }
+
+
+    function negOrPos(num){
+        if (userInput > 0){
+            alert(userInput + " is a positive number.");
+        } else if (userInput < 0){
+            alert(userInput + " is a negative number.");
+        } else if (userInput === 0){
+            alert(userInput + " is neither positive nor negative.");
+        } else {
+            console.log("Something weird happened with negOrPos");
+        }
+    }
+
+
 
 
         //Second Attempt Here, DOES NOT WORK
@@ -367,24 +366,74 @@
     //
 
 //     //UNFINISHED ATTEMPT HERE
-//     var enterNumber = confirm("Would you like to enter a number?");
-// function numberFacts(){
+//     var wantsToEnterNumber = confirm("Would you like to enter a number?");
+// function numberGame(){
+//     var inputNumber = Number(prompt("Please enter a number."));
 //
-//     if(enterNumber === false){
-//         alert("Well, fine then.");
-//     } else if(enterNumber === true){
-//         var magicNumber = prompt("Please enter a number.");
-//         if ((magicNumber % 2) === 0){
-//             alert("that's an even number");
-//         } else if((magicNumber % 2) !== 0);{
-//             alert("that's an odd number");
-//         }
+//     var inputIsNumber = !isNan(inputNumber);
+//
+//     if(inputIsNumber){
+//         var inputNumber;
+//
+//         var isEven = inputNumber % 2 === 0;
+//         var evenMessage = (isEven) ? "That is an even number." : "That is an odd number.";
+//         alert(evenMessage);
+//
+//         alert("Your number added to 100 is: " + (inputNumber + 100));
+//
+//         var negPosMessage = (inputNumber > 0) ? "That is a positive number." : "That is a negative number, or zero.";
+//         alert(negPosMessage);
+//     } else {
+//         alert("That is not a number. Please refresh the page and try again.");
 //     }
 //
 //
 //
 //
 // }
+
+// INSTRUCTOR SOLUTION (this works!)
+//     var userConfirm = confirm("Would you like to enter a number?");
+//
+//     if(userConfirm){
+//         //true path, they want to enter a number
+//
+//         var userNumInput = prompt("Please enter a number.");
+//
+//         console.log("user entered the following; " + userNumInput);
+//
+//         //checking to see if the user input is a number; isNaN == true if the value is not a number (like a string) so !isNaN ==> tell us if value is a number
+//         var isNumber = !isNaN(userNumInput);
+//
+//         if(isNumber){
+//             //true/happy path ==> user did input a number
+//
+//             //parse the input after confirmed that it is a number so we are working with correct data type
+//             var userNumber = parseFloat(userNumInput);
+//
+//             //check to see if the number is even
+//             var isEven = userNumber % 2 === 0;
+//             console.log("The user's number is even: " + isEven);
+//
+//             //User ternary statement to determine the message, if even, use even message, if odd, use odd message
+//             var evenMessage = (isEven) ? "Your number is even!" : "Your number is odd!";
+//             alert(evenMessage);
+//
+//             //add and alert 100 to user number
+//             alert(userNumber + 100);
+//
+//
+//             //Use ternary statement to determine positive or negative
+//             var posNegMessage = (userNumber >= 0) ? "Your number is positive" : "Your number is negative";
+//             alert( posNegMessage);
+//
+//         } else {
+//             // sad path ==> not a number
+//             alert("Hey, that's not a number!");
+//         }
+//
+//
+//     }
 
 
 
