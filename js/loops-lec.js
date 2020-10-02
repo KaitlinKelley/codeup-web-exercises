@@ -129,11 +129,11 @@
 
 //TODO: Create a do-while loop that prompts the user for a color and continues to prompt until the string passed is "blue"
 
-do {
-    var colorQuestion = (prompt("Please type in a color.")).toLowerCase();
-} while (colorQuestion !== "blue");
-
-alert("Thank goodness, you finally guessed it.");
+// do {
+//     var colorQuestion = (prompt("Please type in a color.")).toLowerCase();
+// } while (colorQuestion !== "blue");
+//
+// alert("Thank goodness, you finally guessed it.");
 
 
 
