@@ -53,7 +53,7 @@
 
 //
 //
-//
+//DONE
 // 3. Create a for loop that uses console.log to create the output shown below.
 //
 //
@@ -68,10 +68,10 @@
 // 999999999
 
 // for (var i = 1; i <= 9; i++){
-//     i.toString
+//     console.log((i.toString()).repeat(i));
 // }
-//
-//
+
+
 
 //DONE
 // 4. Create a for loop that uses console.log to create the output shown below.
