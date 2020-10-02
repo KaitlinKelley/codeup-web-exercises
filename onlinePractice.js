@@ -27,3 +27,13 @@ function areaShape(base, height, shape) {
     }
 }
 
+//Create a function that finds the index of a given item.
+
+function search(arr, item) {
+    return arr.indexOf(item);
+}
+
+//Create a function that takes a name and returns a greeting in the form of a string. Don't use a normal function, use an arrow function.
+
+const helloName = name => "Hello " + name + "!";
+
