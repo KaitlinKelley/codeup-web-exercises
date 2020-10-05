@@ -1,20 +1,3 @@
-"use strict";
-
-console.log("Warmups");
-console.log("Hello, Foster!");
-console.log("Hello, Nimoy!");
-console.log("Hello, Stanzi!");
-console.log("Hello, Jon Snow!");
-console.log("Hello, Frodo!");
-
-function sayHello(name){
-    console.log("Hello, " + name);
-}
-
-sayHello("Kaitlin");
-//calling the function
-
-
 // function charMatchCase(string){
 //     if (string === string.toLowerCase()){
 //         return true;
@@ -34,5 +17,3 @@ function charMatchCase(string){
 console.log (charMatchCase("hello world"));
 console.log (charMatchCase("HELLO WORLD"));
 console.log (charMatchCase("heLLo WoRld"));
-
-
