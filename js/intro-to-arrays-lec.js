@@ -171,10 +171,10 @@ var favoriteFoods = ["tacos", "chicken pot pie", "pho", "beef stroganoff"]
 // var i = 2 ==> Will log: "circle", "triangle"
 
 // TODO: What are benefits of using loops to iterate?
-//Less hard-coding! Less typing! More dynamic!
+//Less hard-coding! Less typing! More dynamic! Don't have to know exactly what's in the array in order to manipulate it.
 
 // TODO: How does the loop know when to stop iterating?
-//Once it reaches the condition defined in the middle section of the for-loop definition, it will stop
+//Once it reaches the condition defined in the middle section of the for-loop definition, it will stop (array.length)
 
 // TODO: Using a for loop, iterate through the instructors array and console.log each instructor
 
@@ -200,28 +200,61 @@ var favoriteFoods = ["tacos", "chicken pot pie", "pho", "beef stroganoff"]
 //
 // }
 
-// TODO: Refactoring the instructor loop, alert "hey, I know <INSTRUCTOR NAME HERE>" if you have had class with that instructor. If you have not had class with that instructor, alert "I haven't had class with <INSTRUCTOR NAME HERE> yet!"
+// TODO: Refactoring the instructor loop, alert "hey, I know <INSTRUCTOR NAME HERE>" if you have had class with that instructor. If you have not had class with that instructor, alert(or console.log) "I haven't had class with <INSTRUCTOR NAME HERE> yet!"
 
-for (var i = 0; i < instructors.length; i++){
-    console.log(instructors[i]);
-    if(instructors[i] === "sophie" || instructors[i] === "vivian"){
-        console.log("Hey, I know " + instructors[i] + "!");
-    } else {
-        console.log("I haven't had class with " + instructors[i] + ", yet.");
-    }
-
-}
+// for (var i = 0; i < instructors.length; i++){
+//     console.log(instructors[i]);
+//     if(instructors[i] === "sophie" || instructors[i] === "vivian"){
+//         console.log("Hey, I know " + instructors[i] + "!");
+//     } else {
+//         console.log("I haven't had class with " + instructors[i] + ", yet. Boo.");
+//     }
+//
+// }
 
 /* ***************************************************************
 * 						FOR EACH ARRAY
 *************************************************************** */
 
+// //basic structure
+// someArray.forEach(function(element, index, array){
+//     //body statement
+// })
+//
+// //example
+// shapes.forEach(function(shape, index, array){
+//
+// })
+
 // TODO TOGETHER: Using a for each loop, console.log each shape from the shapes array
+
+// shapes.forEach(function(shape, index, array){
+//     console.log("=========");
+//     console.log(index);
+//     console.log(array);
+//     console.log(shape);
+// })
 
 
 // TODO TOGETHER: Using a for each loop, console.log each element from the following array:
 var pies = ["apple", "cherry", "key lime", "huckleberry"];
 
+pies.forEach(function(pie){
+    console.log(pie);
+})
+
 // TODO: Using a for each loop, iterate through the instructors array and console.log each instructor
+
+instructors.forEach(function (instructor){
+    console.log(instructor);
+})
 // TODO: Using a for each loop, iterate through the daysOfTheWeek array and console.log each day of the week
+
+daysOfTheWeek.forEach(function (day){
+    console.log(day);
+})
 // TODO: Using a for each loop, iterate through the favoriteFoods array and console.log each favorite food
+
+favoriteFoods.forEach(function(food){
+    console.log(food);
+})
