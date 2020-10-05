@@ -46,6 +46,21 @@
 //     }
 // }
 
+//USING A DO-WHILE LOOP AND A BREAK STATEMENT
+// do{
+//     var numberToSkip = Number(prompt("Please enter an odd number between 1 and 50"));
+//     if(numberToSkip < 1 || numberToSkip > 50){
+//         alert("Number is invalid, please try again.");
+//     } else if (numberToSkip %2 === 0){
+//         alert("That number is even, please try again.");
+//     } else if (isNaN(numberToSkip)){
+//         alert("That is not a number, please try again.");
+//     } else {
+//         alert("Number is valid! Thank you!");
+//         break;
+//     }
+// }while(true);
+
 
 //USING A DO-WHILE LOOP
 // do {
@@ -56,6 +71,8 @@
 //
 //
 //
+
+//FOR LOOP FOR CONSOLE LOGGING THE SECOND PART, USE WITH ALL ABOVE EXAMPLES
 // for (var i = 0; i < 50; i++){
 //     if (i %2 === 0){
 //         continue;

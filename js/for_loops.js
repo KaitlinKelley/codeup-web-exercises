@@ -19,10 +19,12 @@
 
 // function showMultiplicationTable(num){
 //     for (var i = 1; i <= 10; i++){
-//         console.log(num + " x " + i + " = " + (i*num));
+//             var result = (i*num);
+//         console.log(num + " x " + i + " = " + result);
 //     }
 // }
 //
+//DON'T FORGET TO CALL THE FUNCTION. DUH.
 // showMultiplicationTable(7);
 
 
@@ -39,9 +41,8 @@
 // //This expression will generate a random number between 20 and 200
 // Math.floor(Math.random() * 200) + 20;
 //
-//DONE
 // for (var i = 1; i <= 10; i++){
-//     var randomNum = Math.floor(Math.random() * 200) + 20;
+//     var randomNum = Math.floor(Math.random() * 180) + 20;    //20 is the starting point, between 2 and 200 are 180 possibilities
 //     if (randomNum % 2 === 0){
 //         console.log(randomNum + " is an even number.")
 //     } else if (randomNum % 2 !== 0){
@@ -55,8 +56,8 @@
 //
 //DONE
 // 3. Create a for loop that uses console.log to create the output shown below.
-
-
+//
+//
 // 1
 // 22
 // 333
@@ -69,6 +70,17 @@
 
 // for (var i = 1; i <= 9; i++){
 //     console.log((i.toString()).repeat(i));
+// }
+
+//USING A NESTED LOOP, CAREFUL IT NEEDS FIXING
+
+// for(var outerLoop = 1; outerLoop <= 9; outerLoop++){
+//     var output = "";
+//
+//     for(var innerLoop = 1; innerLoop <= outerLoop; innerLoop++){
+//         output += output;
+//     }
+//     console.log(output);
 // }
 
 

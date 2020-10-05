@@ -47,7 +47,7 @@
 //THE VERSION BELOW IS THE ONE I AM CURRENTLY WORKING ON, USE THIS ONE!!!!!!!!!!!
 //I THINK IT WORKS???
 
-// var totalCones = Math.floor(Math.random() * 50) + 100;
+// var totalCones = Math.floor(Math.random() * 50) + 50;
 //
 // do {
 //     console.log("There is a total of: " + totalCones + " cones.")
@@ -66,6 +66,22 @@
 //
 //
 // } while (totalCones > 0);
+
+//INSTRUCTOR SOLUTION
+
+// var allCones = Math.floor(Math.random() * 50) + 50;
+//
+// do{
+//     var conesPurchased = Math.floor(Math.random() * 5) + 1;
+//     if(conesPurchased > allCones){
+//         var outOfStock = "I can't sell you " + conesPurchased + " , I only have " + allCones
+//         console.log(outOfStock);
+//     } else {
+//         allCones -= conesPurchased;
+//         var soldCones = conesPurchased + " cones sold..." + allCones + " cones to go.";
+//         console.log(soldCones);
+//     }
+// }while (allCones > 0);
 
 
 // // This is how you get a random number between 50 and 100
