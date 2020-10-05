@@ -37,7 +37,17 @@
 // Here is an odd number: 49
 
 
+//USING A WHILE LOOP AND A BREAK STATEMENT
+// var numberToSkip = parseInt(prompt("Please enter an odd number between 1 and 50."));
+// while((numberToSkip % 2 === 0) || (numberToSkip < 1) || (numberToSkip >= 50)){
+//     var numberToSkip = parseInt(prompt("Please enter an odd number between 1 and 50."));
+//     if ((numberToSkip % 2 !== 0) && (numberToSkip >= 1) || (numberToSkip <= 50)){
+//         break;
+//     }
+// }
 
+
+//USING A DO-WHILE LOOP
 // do {
 //     var numberToSkip = parseInt(prompt("Please enter an odd number between 1 and 50."));
 //
