@@ -34,7 +34,7 @@
      * array.
      */
 
-    for( var i = 0; i < names.length; i++){
+    for(var i = 0; i < names.length; i++){
         console.log(names[i]);
     }
 
@@ -61,16 +61,23 @@
      *  > last([1, 2, 3, 4, 5]) // return 5
      */
 
-    function returnFirstElement(array){
+    function first(array){
         return array[0];
     }
+    console.log(first(names));
 
-    function returnSecondElement(array){
+
+
+    function second(array){
         return array[1];
     }
+    console.log(second(names));
 
-    function returnLastElement(array){
+
+
+    function last(array){
         return array[array.length  - 1];
     }
+    console.log(last(names));
 
 })();
