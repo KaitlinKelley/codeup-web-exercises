@@ -247,16 +247,29 @@ var aphorisms = [
 
 //TODO: What variable represents the array of aphorisms
 
+//var aphorisms;
+
 //TODO: Console.log 'aphorisms'. Explore the data structure. What are some things you notice?
+console.log(aphorisms);
+//Starts as a collapsed array, can be expanded in console
+//Is an array of objects
+//Lists number of items in array
 
 //TODO:How long is this array?
+console.log(aphorisms.length);
+//61
 
 //TODO: Assign the first quote/author object to the variable firstQuote. Log the quote from the variable. Log the author from the variable.
+var firstQuote = aphorisms[0];
+console.log(firstQuote);
 
 //TODO: Assign the last quote/author object to the variable lastQuote. Log the quote from the variable. Log the author from the variable.
+var lastQuote = aphorisms[aphorisms.length-1];
+console.log(lastQuote);
 
 //TODO: Without using a loop, log the first 5 quotes and their author in the format quote + "-author"
 //Example: "build something 100 people love, not something 1 million people kind of like -Brian Chesky"
+
 
 //TODO: After doing this 'manually' why is a loop more beneficial?
 
