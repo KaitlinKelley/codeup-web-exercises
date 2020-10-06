@@ -18,7 +18,7 @@
      * Create a string with <br> tags between each planet. console.log() your
      * results. Why might this be useful?
      *
-     * //Useful for pasting into HTML
+     * //Useful for putting stuff from JS into HTML
      *
      * BONUS:
      * Create another string that would display your planets in an undordered
@@ -26,11 +26,11 @@
      * string, and <li> tags around each planet.
      */
 
-    var planetStringBr = planetsArray.join("<br>");
-    console.log(planetStringBr);
-
-    var planetStringUl = "<ul><li>" + planetsArray.join("</li><li>") + "</li></ul>";
-    console.log(planetStringUl);
+    // var planetStringBr = planetsArray.join("<br>");
+    // console.log(planetStringBr);
+    //
+    // var planetStringUl = "<ul><li>" + planetsArray.join("</li><li>") + "</li></ul>";
+    // console.log(planetStringUl);
 
 })();
 
@@ -43,3 +43,21 @@
 // Extra Challenge: account for invalid characters
 // Extra Challenge: if the input is already formatted, output the unformatted version
 // Extra Challenge: allow the parser to accept letters and convert them to the correct numbers
+
+
+//DOESN'T WORK YET
+// function convertTenDigits(input){
+//     var newInput = input.toString();
+//     console.log(newInput);
+//     var tenDigitNumAsArray = newInput.split("");
+//     console.log(tenDigitNumAsArray);
+//     var arrayWithOneDash = tenDigitNumAsArray.splice(3, 0, "-");
+//     console.log(arrayWithOneDash);
+//     var arrayWithTwoDashes = arrayWithOneDash.splice(7, 0, "-");
+//     console.log(arrayWithTwoDashes);
+//     var tenDigitStringWithDashes = arrayWithTwoDashes.join("");
+//     return tenDigitStringWithDashes;
+//     console.log(tenDigitStringWithDashes);
+// }
+//
+// convertTenDigits(5552875463);
