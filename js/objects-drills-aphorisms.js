@@ -269,7 +269,11 @@ console.log(lastQuote);
 
 //TODO: Without using a loop, log the first 5 quotes and their author in the format quote + "-author"
 //Example: "build something 100 people love, not something 1 million people kind of like -Brian Chesky"
-
+console.log(firstQuote);
+console.log(aphorisms[1]);
+console.log(aphorisms[2]);
+console.log(aphorisms[3]);
+console.log(aphorisms[4]);
 
 //TODO: After doing this 'manually' why is a loop more beneficial?
 
