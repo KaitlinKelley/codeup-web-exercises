@@ -23,6 +23,14 @@
     console.log(person.lastName + ", " + person.firstName)
     console.log(person.sayHello());
 
+
+    //OR ADD THE METHOD TO THE OBJECT THIS WAY===========
+    //person.sayHello = function(){
+    // return "Hello from " + this.firstName + " " + this.lastName + "!";
+    //}
+    //=====================================
+
+
     /**
      * TODO:
      * Add a sayHello method to the person object that returns a greeting using
@@ -69,6 +77,23 @@
     }
 
 twelvePercentDiscount(shoppers);
+
+    //INSTRUCTOR SOLUTION
+    //
+    //
+    // shoppers.forEach(function(shopper){
+    //     var initialAmount = shopper.amount;
+    //     var discount = shopper.amount * .12;
+    //     var finalAmount = initialAmount - discount;
+    //
+    //     //check for customers who spent > 200
+    //
+    //     if(initialAmount > 200){
+    //         console.log(shopper.name + " spent " + initialAmount + ". They get a discount of " + discount + ". The total paid was: " + finalAmount);
+    //     } else {
+    //         console.log(shopper.name + " paid " + initialAmount);
+    //     }
+    // });
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
@@ -125,7 +150,19 @@ twelvePercentDiscount(shoppers);
 //         console.log("Title: " + book.title);
 //         console.log("Author: " + book.author.firstName + " " + book.author.lastName);
 //         console.log("----------------");
-//     })
+//     });
+
+
+
+    //INSTRUCTOR SOLUTION
+    // books.forEach(function(book, i){
+    //     var output = "";
+    //     output += "Book # " + (i +1) + "\n";
+    //     output += "Title: " + book.title + "\n";
+    //     output += "Author: " + book.author.firstName + " " + book.author.lastName + "\n";
+    //     output += "--------";
+    //     console.log(output);
+    // });
 
 
     /**
@@ -152,6 +189,7 @@ twelvePercentDiscount(shoppers);
      *      ---
      *      ...
      */
+    //see above
 
     /**
      * Bonus:
@@ -174,7 +212,7 @@ twelvePercentDiscount(shoppers);
         }
     }
 
-    console.log(createBook("Stranger In a Strange Land", "Heinlein", "Robert"));
+    // console.log(createBook("Stranger In a Strange Land", "Heinlein", "Robert"));
 
     var books = [createBook("Stranger In a Strange Land", "Heinlein", "Robert"),
                 createBook("Dune", "Herbert", "Frank"),
@@ -183,7 +221,7 @@ twelvePercentDiscount(shoppers);
                 createBook("The Mists of Avalon", "Bradley", "Marion Zimmer")
                 ];
 
-    console.log(books);
+    // console.log(books);
 
 
     function showBookInfo(bookInput){
@@ -191,11 +229,46 @@ twelvePercentDiscount(shoppers);
                 "Title: " + bookInput.title + " | " +
                 "Author: " + bookInput.author.firstName + " " + bookInput.author.lastName;
     }
-        console.log(showBookInfo(books[1]));
+        // console.log(showBookInfo(books[1]));
 
     books.forEach(function(book){
         console.log(showBookInfo(book));
+
+        books.forEach(showBookInfo);
     })
+
+
+
+
+    // //====================INSTRUCTOR SOLUTION==========
+    //
+    // function createBook(title, first, last){
+    //     return {
+    //         title: title,
+    //         author: {
+    //             firstName: first,
+    //             lastName: last
+    //         }
+    //     }
+    //
+    // }
+    //
+    // books.push(createBook("Cat's Cradle", "Kurt", "Vonnegut"));
+    // //pushes an object into an array
+    //
+    // function showBookInfo(book, i){
+    //     var output = "";
+    //         output += "Book # " + (i +1) + "\n";
+    //         output += "Title: " + book.title + "\n";
+    //         output += "Author: " + book.author.firstName + " " + book.author.lastName + "\n";
+    //         output += "--------";
+    //         console.log(output);
+    // }
+    //
+    // books.forEach(showBookInfo);
+    // //THE ABOVE LINE IS WEIRD, FIGURE THIS OUT!!
+
+
 
 
 })();
