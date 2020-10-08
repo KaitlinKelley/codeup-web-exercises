@@ -250,30 +250,30 @@ var aphorisms = [
 //var aphorisms;
 
 //TODO: Console.log 'aphorisms'. Explore the data structure. What are some things you notice?
-console.log(aphorisms);
+// console.log(aphorisms);
 //Starts as a collapsed array, can be expanded in console
 //Is an array of objects
 //Lists number of items in array
 
 //TODO:How long is this array?
-console.log(aphorisms.length);
+// console.log(aphorisms.length);
 //61
 
 //TODO: Assign the first quote/author object to the variable firstQuote. Log the quote from the variable. Log the author from the variable.
-var firstQuote = aphorisms[0];
-console.log(firstQuote);
+// var firstQuote = aphorisms[0];
+// console.log(firstQuote);
 
 //TODO: Assign the last quote/author object to the variable lastQuote. Log the quote from the variable. Log the author from the variable.
-var lastQuote = aphorisms[aphorisms.length-1];
-console.log(lastQuote);
+// var lastQuote = aphorisms[aphorisms.length-1];
+// console.log(lastQuote);
 
 //TODO: Without using a loop, log the first 5 quotes and their author in the format quote + "-author"
 //Example: "build something 100 people love, not something 1 million people kind of like -Brian Chesky"
-console.log(aphorisms[0].quote + " -" + aphorisms[0].author);
-console.log(aphorisms[1].quote + " -" + aphorisms[0].author);
-console.log(aphorisms[2].quote + " -" + aphorisms[0].author);
-console.log(aphorisms[3].quote + " -" + aphorisms[0].author);
-console.log(aphorisms[4].quote + " -" + aphorisms[0].author);
+// console.log(aphorisms[0].quote + " -" + aphorisms[0].author);
+// console.log(aphorisms[1].quote + " -" + aphorisms[0].author);
+// console.log(aphorisms[2].quote + " -" + aphorisms[0].author);
+// console.log(aphorisms[3].quote + " -" + aphorisms[0].author);
+// console.log(aphorisms[4].quote + " -" + aphorisms[0].author);
 
 
 //TODO: After doing this 'manually' why is a loop more beneficial?
@@ -289,12 +289,12 @@ console.log(aphorisms[4].quote + " -" + aphorisms[0].author);
 *Example Output: What’s the one thing you can do, such that by doing it, everything else will be easier or unnecessary? -Gary Keller"
 **/
 
-function formatQuote(object){
-   console.log(object.quote + " -" + object.author)
-}
-
-formatQuote(aphorisms[7]);
-formatQuote(aphorisms[9]);
+// function formatQuote(object){
+//    console.log(object.quote + " -" + object.author)
+// }
+//
+// formatQuote(aphorisms[7]);
+// formatQuote(aphorisms[9]);
 
 //TODO: Write a function named getRandomQuote, that accepts the aphorisms array, and returns a string that contains a random quote and author in the format "quote" + "-author".
 
@@ -322,4 +322,33 @@ formatQuote(aphorisms[9]);
 
 //TODO: Write a function named 'anonQuotes' that accepts the aphorisms array and returns an array of aphorism objects of all quotes by 'anonymous'. Each object should contain the following properties: { quote: <QUOTE_HERE>, author: <AUTHOR_HERE>}.
 
+function anonQuotes(array){
+    var anonArray = [];
+    array.forEach(function(object){
+        if(object.author === "anonymous"){
+            var anonObject = {quote:object.quote, author:object.author};
+            anonArray.push(anonObject);
+        }
+
+    })
+    return anonArray;
+}
+
+console.log(anonQuotes(aphorisms));
+
 //TODO: Write a function named 'everyOddQuote', that accepts the aphorisms array and returns an array of objects of every odd indexed quote. Each object should contain the following properties: { id: <INDEX_HERE>, quote: <QUOTE_HERE>, author: <AUTHOR_HERE>, rating: <RANDOM_RATING_HERE>}. The random rating should be a number between 1 and 5.
+
+function everyOddQuote(array){
+    var oddArray = [];
+    array.forEach(function(object){
+        if(array.indexOf(object) % 2 !== 0){
+            var bookIndex = array.indexOf(object);
+            var randomRating = Math.floor(Math.random()*5) + 1;
+            var oddObject = {id: bookIndex, quote: object.quote, author:object.author, rating:randomRating};
+            oddArray.push(oddObject);
+        }
+    })
+    return oddArray;
+}
+
+console.log(everyOddQuote(aphorisms));

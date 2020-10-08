@@ -182,8 +182,8 @@ twelvePercentDiscount(shoppers);
                 createBook("Do Androids Dream of Electric Sheep?", "Dick", "Phillip K."),
                 createBook("The Mists of Avalon", "Bradley", "Marion Zimmer")
                 ];
-    //
-    // console.log(books);
+
+    console.log(books);
 
 
     function showBookInfo(bookInput){
