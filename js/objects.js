@@ -82,50 +82,50 @@ twelvePercentDiscount(shoppers);
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
-var books = [
-         {
-             title: "Stranger in a Strange Land",
-             author: {
-                 firstName: "Robert",
-                 lastName: "Heinlein"
-             }
-         },
-        {
-            title: "Dune",
-            author: {
-                firstName: "Frank",
-                lastName: "Herbert"
-            }
-        },
-        {
-            title: "The Lord of the Rings",
-            author: {
-                firstName: "J.R.R.",
-                lastName: "Tolkien"
-            }
-        },
-        {
-            title: "Do Androids Dream of Electric Sheep?",
-            author: {
-                firstName: "Philip K.",
-                lastName: "Dick"
-            }
-        },
-        {
-            title: "The Mists of Avalon",
-            author: {
-                firstName: "Marion Zimmer",
-                lastName: "Bradley"
-            }
-        }
-        ]
-
-    books.forEach(function(book){
-        console.log("Book #" + (books.indexOf(book)+1));
-        console.log("Title: " + book.title);
-        console.log("Author: " + book.author.firstName + " " + book.author.lastName);
-        console.log("----------------");
-    })
+// var books = [
+//          {
+//              title: "Stranger in a Strange Land",
+//              author: {
+//                  firstName: "Robert",
+//                  lastName: "Heinlein"
+//              }
+//          },
+//         {
+//             title: "Dune",
+//             author: {
+//                 firstName: "Frank",
+//                 lastName: "Herbert"
+//             }
+//         },
+//         {
+//             title: "The Lord of the Rings",
+//             author: {
+//                 firstName: "J.R.R.",
+//                 lastName: "Tolkien"
+//             }
+//         },
+//         {
+//             title: "Do Androids Dream of Electric Sheep?",
+//             author: {
+//                 firstName: "Philip K.",
+//                 lastName: "Dick"
+//             }
+//         },
+//         {
+//             title: "The Mists of Avalon",
+//             author: {
+//                 firstName: "Marion Zimmer",
+//                 lastName: "Bradley"
+//             }
+//         }
+//         ]
+//
+//     books.forEach(function(book){
+//         console.log("Book #" + (books.indexOf(book)+1));
+//         console.log("Title: " + book.title);
+//         console.log("Author: " + book.author.firstName + " " + book.author.lastName);
+//         console.log("----------------");
+//     })
 
 
     /**
@@ -176,8 +176,26 @@ var books = [
 
     console.log(createBook("Stranger In a Strange Land", "Heinlein", "Robert"));
 
-    function showBookInfo({bookInput}){
+    var books = [createBook("Stranger In a Strange Land", "Heinlein", "Robert"),
+                createBook("Dune", "Herbert", "Frank"),
+                createBook("The Lord of the Rings", "Tolkien", "J.R.R."),
+                createBook("Do Androids Dream of Electric Sheep?", "Dick", "Phillip K."),
+                createBook("The Mists of Avalon", "Bradley", "Marion Zimmer")
+                ];
+    //
+    // console.log(books);
 
+
+    function showBookInfo(bookInput){
+            return "Book #" + (books.indexOf(bookInput)+1) + " | " +
+                "Title: " + bookInput.title + " | " +
+                "Author: " + bookInput.author.firstName + " " + bookInput.author.lastName;
     }
+        console.log(showBookInfo(books[1]));
+
+    books.forEach(function(book){
+        console.log(showBookInfo(book));
+    })
+
 
 })();

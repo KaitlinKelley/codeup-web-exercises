@@ -269,13 +269,15 @@ console.log(lastQuote);
 
 //TODO: Without using a loop, log the first 5 quotes and their author in the format quote + "-author"
 //Example: "build something 100 people love, not something 1 million people kind of like -Brian Chesky"
-console.log(firstQuote);
-console.log(aphorisms[1]);
-console.log(aphorisms[2]);
-console.log(aphorisms[3]);
-console.log(aphorisms[4]);
+console.log(aphorisms[0].quote + " -" + aphorisms[0].author);
+console.log(aphorisms[1].quote + " -" + aphorisms[0].author);
+console.log(aphorisms[2].quote + " -" + aphorisms[0].author);
+console.log(aphorisms[3].quote + " -" + aphorisms[0].author);
+console.log(aphorisms[4].quote + " -" + aphorisms[0].author);
+
 
 //TODO: After doing this 'manually' why is a loop more beneficial?
+//Faster, less room for error overall, will still function if array changes
 
 //TODO: Write a function named 'formatQuote' that accepts an aphorism object and returns a string containing the quote and author in the format "quote" + "-author"
 /*
@@ -287,9 +289,36 @@ console.log(aphorisms[4]);
 *Example Output: What’s the one thing you can do, such that by doing it, everything else will be easier or unnecessary? -Gary Keller"
 **/
 
+function formatQuote(object){
+   console.log(object.quote + " -" + object.author)
+}
+
+formatQuote(aphorisms[7]);
+formatQuote(aphorisms[9]);
+
 //TODO: Write a function named getRandomQuote, that accepts the aphorisms array, and returns a string that contains a random quote and author in the format "quote" + "-author".
 
+// function getRandomQuote(array){
+//     //get random # between 0 and array.length-1
+//     var randomNumber = Math.floor(Math.random()*(array.length-1));
+//     console.log(array[randomNumber].quote + " -" + array[randomNumber].author);
+//
+// }
+//
+// getRandomQuote(aphorisms);
+
+
 //TODO: Write a function named fiveRandomQuotes, that accepts the aphorisms array and returns an array of five random quotes and authors in the format "quote" + "-author".
+
+// function fiveRandomQuotes(array){
+//     for (var i = 0; i <= 4; i++){
+//         var randomNumber = Math.floor(Math.random()*(array.length-1));
+//         console.log(array[randomNumber].quote + " -" + array[randomNumber].author);
+//     }
+//
+// }
+//
+// fiveRandomQuotes(aphorisms);
 
 //TODO: Write a function named 'anonQuotes' that accepts the aphorisms array and returns an array of aphorism objects of all quotes by 'anonymous'. Each object should contain the following properties: { quote: <QUOTE_HERE>, author: <AUTHOR_HERE>}.
 
