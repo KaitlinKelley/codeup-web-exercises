@@ -256,16 +256,18 @@ var aphorisms = [
 //Lists number of items in array
 
 //TODO:How long is this array?
-// console.log(aphorisms.length);
+console.log(aphorisms.length);
 //61
 
 //TODO: Assign the first quote/author object to the variable firstQuote. Log the quote from the variable. Log the author from the variable.
-// var firstQuote = aphorisms[0];
-// console.log(firstQuote);
+var firstQuote = aphorisms[0];
+console.log(firstQuote.quote);
+console.log(firstQuote.author);
 
 //TODO: Assign the last quote/author object to the variable lastQuote. Log the quote from the variable. Log the author from the variable.
-// var lastQuote = aphorisms[aphorisms.length-1];
-// console.log(lastQuote);
+var lastQuote = aphorisms[aphorisms.length-1];
+console.log(lastQuote.quote);
+console.log(lastQuote.author);
 
 //TODO: Without using a loop, log the first 5 quotes and their author in the format quote + "-author"
 //Example: "build something 100 people love, not something 1 million people kind of like -Brian Chesky"
