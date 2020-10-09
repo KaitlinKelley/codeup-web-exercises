@@ -7,18 +7,17 @@
 
         getArea: function () {
             // TODO: complete this method
-            var area = Math.PI*(Math.pow(this.radius, 2));// hint: area = pi * radius^2
-            return area;
+            // hint: area = pi * radius^2
+            return Math.PI * (Math.pow(this.radius, 2));
             // TODO: return the proper value
         },
 
         logInfo: function (doRounding) {
             // TODO: complete this method.
-            var area;
+            //create a variable to hold the area, while we check if we need to round or not
+            var area = this.getArea();
             if(doRounding){
-              area =  Math.round(this.getArea());
-            } else {
-                area = this.getArea();
+              area =  Math.round(area);
             }
 
             // If doRounding is true, round the result to the nearest integer.
@@ -28,7 +27,7 @@
         }
     };
 
-    console.log(circle.getArea(2));
+
     // log info about the circle
     console.log("Raw circle information");
     circle.logInfo(false);
