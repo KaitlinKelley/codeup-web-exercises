@@ -36,3 +36,10 @@ console.log (charMatchCase("HELLO WORLD"));
 console.log (charMatchCase("heLLo WoRld"));
 
 
+function makeArray(string){
+    return string.split(" ");
+}
+
+console.log(makeArray("Trick or Treat"));
+
+
