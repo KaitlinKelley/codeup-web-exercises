@@ -2,76 +2,116 @@
 # HTML Elements Pre Lesson
 ### Overview
 1. In your own words, define an HTML element.
-They define and describe types of data
+They define and describe types of data and content
+Tells the browser what stuff is
+
 
 2. What is a void element?
 Has only opening tag, no closing tag
+Does not contain any real "content"
+<input type="text" name="username" />
+You CAN end with a /, but is not required.
+
 
 3. What do all elements begin and end with
 <>
+
 
 4. What is the syntax of an HTML element
 <openingtag>StuffGoesHere</closingtag>
 
 
 5. What do we call an element that contains other elements? What are the nested elements called?
-Parent Element, Child Elements
+Parent Element ==> Child Elements
 
 
 ### Block-Level vs. Inline Elements
 1. What is a block level element? What is an example of a block level element?
 Meant to take up entire width of page, can contain other block elements, and inline elements. <p></p>, <div></div>
+Often contains other elements
+Takes up entire space of parent element (container)
+
 
 
 2. What is an inline element? What is an example of an inline element?
-Only takes up its own space, not the whole width of the page. Usually only contains data, or other inline elements. <span>, <img>
+Only takes up its own space, not the whole width of the page.
+Usually only contains data, or other inline elements. <span>, <img>
+
 
 ### Attributes
 1. What is an attribute?
 Additional data inside an element
+Has a name, an = sign, and a value inside "double quotes"
+example: <div id="wrapper">Content</div>
+Multiple attributes are separated by spaces
+
 
 ### Common HTML Elements
 Experiment with the following elements. What are some things you notice about these?
 *  Headings <h1></h1>
 Block level, had six levels already built in (h1-h6), with <h1></h1> being the biggest
 
-*  Paragraphs <p>
+
+*  Paragraphs <p></p>
 Block level
+
 
 *  Line Breaks <br>
 void element, block element
 
+
 *  Horizontal Rule <hr>
 void element, block element, similar to <br>, uses horizontal line to break
+
 
 *  Strong <strong></strong>
 Text between tags will be bold
 
+
 *  Emphasis <em></em>
 Text between tags will be italicized
 
+
 *  Nesting Elements
 Putting elements inside one another
+
 
 *  Lists (Ordered & Unordered)
 Block level
 Both use <li></li> for list items
 Ordered <ol></ol> will use numbers
 Unordered <ul></ul> will use bullets or other symbol
+**can use unordered lists to make a navbar**
+**description lists**
+
 
 *  Anchor Tag
 Inline element
 Can link to outside web pages, or to locations within the web page
 Can use href and target
 
+
 *  Images
 Void element
 Display an image with src
 No hotlinking!
 
-*  Tables
+
+*  Tables <table></table>
 Block element
-Use only for tabular data!
-Start with <tr> (table row)
-Use <th></th> for table header
+Use only for tabular data! NOT FOR LAYOUTS!
+Start with <tr></tr> (table row)
+Use <th></th> for table header, within a row
 Within each following row after header, use <td></td> for table cells (table data??)
+
+
+* HTML for Page Layouts
+Page layout is the process of placing and arranging text, images, and graphics on a web page
+Header, nav, main, article, section, aside, footer
+<header> defines a header for a document or section
+<nav> defines a container for navigation links
+<main> the main content area
+<article> an independent self-contained article
+<section> defines a section in a document
+<aside> defines content aside from the content (like a sidebar)
+<footer> a footer for a document or section
