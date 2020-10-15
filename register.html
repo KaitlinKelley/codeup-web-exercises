@@ -18,19 +18,22 @@
 <!--confirm_password: required-->
 <!--a checkbox for "sign me up to the newsletter" that loads checked-->
 <!--The text on the submit button should read "Create New Account!"-->
-<h1>Registration From</h1>
-    <form>
-        <label for="username">Username</label>
-        <input type="text" name="username" id="username" required><br>
-        <label for="email">E-mail</label>
-        <input type="text" name="email" id="email" required><br>
-        <label for="password">Password</label>
-        <input type="password" name="password" id="password" required><br>
-        <label for="passwordConfirm">Confirm Password</label>
-        <input type="password" name="passwordConfirm" id="passwordConfirm" required><br>
-        <label><input type="checkbox" name="wantsNewsletter" value="yes" checked>Would you like to sign up for our newsletter?</label><br>
-        <button type="submit">Create New Account!</button>
-    </form>
-
+<header>
+    <h1>Registration Form</h1>
+</header>
+    <main>
+        <form>
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username" autofocus required><br>
+            <label for="email">E-mail</label>
+            <input type="text" name="email" id="email" required><br>
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" required><br>
+            <label for="passwordConfirm">Confirm Password</label>
+            <input type="password" name="passwordConfirm" id="passwordConfirm" required><br>
+            <label><input type="checkbox" name="wantsNewsletter" value="yes" checked>Would you like to sign up for our newsletter?</label><br>
+            <button type="submit">Create New Account!</button>
+        </form>
+    </main>
 </body>
 </html>
