@@ -5,37 +5,40 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Register With Us</title>
+    <title>Veridian Dynamics:Register With Us</title>
 </head>
 <body>
+    <header>
+        <h1>Register With Us!</h1>
+    </header>
     <main>
-
-         <h1>Register with us!</h1>
-            <form method="GET" action="https://hookb.in/yD7RnMYJQbIJNNPaRp0p">
+            <form method="POST" action="https://hookb.in/yD7RnMYJQbIJNNPaRp0p">
                 <div>
                     <label for="email">E-mail</label>
-                     <input type="text" name="email" id="email" placeholder="Enter your email address" required>
-                    <br>
-                    <br>
+                    <input type="email" name="email" id="email" placeholder="Enter your email address" required>
+                </div>
+                <br>
+                <div>
                     <label for="password">Password</label>
                     <input type="password" name="password" id="password" placeholder="Enter your password" required>
                 </div>
                 <div>
                     <br>
                     <label for="bio">Bio</label>
+                    <br>
                     <textarea name="bio" id="bio" rows="6" placeholder="Tell us about yourself!"></textarea>
                     <br>
                     <br>
                 </div>
                 <fieldset>
                     <legend>Where did you hear about us? Select all that apply.</legend>
-                    <label>Billboard <input type="radio" name="heardFromWhere1" value="billboard"></label>
+                    <label for="billboard"><input type="radio" name="heardFromWhere1" id="billboard" value="billboard">Billboard</label>
                     <br>
-                    <label>Radio Ad <input type="radio" name="heardFromWhere2" value="radio"></label>
+                    <label for="radio"><input type="radio" name="heardFromWhere2" id="radio" value="radio">Radio</label>
                     <br>
-                    <label>Internet Ad <input type="radio" name="heardFromWhere3" value="internet"></label>
+                    <label for="internet"><input type="radio" name="heardFromWhere3" id="internet" value="internet">Internet</label>
                     <br>
-                    <label>Other <input type="radio" name="heardFromWhere4" value="other"></label>
+                    <label for="other"><input type="radio" name="heardFromWhere4" id="other" value="other">Other</label>
                     <br>
                 </fieldset>
                 <br>
@@ -49,9 +52,8 @@
                     </select>
                 </fieldset>
                 <br>
-            <button type="submit">Submit</button>
+            <button>Submit</button>
         </form>
     </main>
-
 </body>
 </html>
