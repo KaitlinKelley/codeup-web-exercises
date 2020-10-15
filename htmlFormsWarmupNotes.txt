@@ -125,3 +125,36 @@ Bonus
 
   - What happens if additional text inputs are added with different name values?
   Each name goes through, and every name has its corresponding input value attached
+
+
+  ================================================================================
+  What input type would you choose for each piece of data to get from a user?
+  - an address
+  Several text inputs for: address, zip code, city and state, apt #, etc
+
+  - feedback on a survey
+  Textarea
+
+  - the age of a person
+  Text input
+
+  - the amount of a payment
+  Text input
+
+  - a password
+  Password
+
+  - a background color preference
+  Select(drop-down menu)
+
+  - a car make and model selection
+  Select(drop-down menu)
+
+  - eye color
+  Drop-down menu or radio buttons
+
+  - if a user prefers to have emailed invoices
+  Checkbox
+
+  - the model year of a car
+  - date of birth
