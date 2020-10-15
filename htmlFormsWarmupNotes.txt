@@ -110,7 +110,6 @@ Bonus
   - What happens when no form action or method is provided?
   404 Not Found error
 
-
   - What does the output look like in Hookbin between GET and POST requests?
   GET shows query string with name and input value
   With POST, query string area is blank
