@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Property Search</title>
+</head>
+<body>
+    <header>
+        <h1>Let's Find Your New Home!</h1>
+    </header>
+    <main>
+        <form>
+            <label for="propertyType">Please select property type:</label>
+            <select name="propertyType" id="propertyType">
+                <option value="House">House</option>
+                <option value="Condo">Condo</option>
+                <option value="Apartment">Apartment</option>
+                <option value="Townhome">Townhome</option>
+            </select><br>
+            <label for="squareFootage">Please select your desired range of square footage:</label>
+            <select name="squareFootage" id="squareFootage">
+                <option value="500-650">500-650</option>
+                <option value="650-800">650-800</option>
+                <option value="800-1000">800-1000</option>
+                <option value="1000-1500+">1000-1500+</option>
+            </select><br>
+            <label for="minPrice">Minimum Price</label>
+            <input type="text" name="minPrice" id="minPrice" value="0">
+            <label for="maxPrice">Maximum Price</label>
+            <input type="text" name="maxPrice" id="maxPrice" value="0" required><br>
+            <label for="zipcode">Please enter your desired zipcode:</label>
+            <input type="text" name="zipcode" id="zipcode" required><br>
+            <label for="bedrooms">How many bedrooms?</label>
+            <select name="bedrooms" id="bedrooms">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3+">3+</option>
+                <option value="Any">Any</option>
+            </select>
+            <label for="bathrooms">How many bathrooms?</label>
+            <select name="bathrooms" id="bathrooms">
+                <option value="1">1</option>
+                <option value="1.5">1.5</option>
+                <option value="2+">2+</option>
+                <option value="Any">Any</option>
+            </select><br>
+            <label for="features">Any other features you would like to look for?</label>
+            <fieldset id="features">
+                <label><input type="checkbox" name="backyard" value="backyard">Backyard</label><br>
+                <label><input type="checkbox" name="patio" value="patio">Patio</label><br>
+                <label><input type="checkbox" name="gated" value="gated">Gated community</label><br>
+                <label><input type="checkbox" name="pool" value="pool">Pool</label><br>
+            </fieldset>
+            <button>Search Now</button>
+        </form>
+    </main>
+<!--Make a file named property-search.html. This will be a form for a property search.-->
+
+<!--Add all the appropriate inputs you would need to conduct a property search:-->
+
+<!--Property type-->
+<!--square footage-->
+<!--min_price-->
+<!--max_price-->
+<!--zipcode-->
+<!--number of bedrooms-->
+<!--number of bathrooms-->
+<!--etc...-->
+<!--The submit button's text should say "Search now"-->
+
+</body>
+</html>
