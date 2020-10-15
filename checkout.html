@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Checkout</title>
+</head>
+<body>
+    <header>
+        <h1>Payment Information</h1>
+    </header>
+    <main>
+        <form method="POST" action="https://hookb.in/yD7RnMYJQbIJNNPaRp0p">
+            <label for="cardtype">Please select card type:</label><br>
+            <label>Visa <input type="radio" name="cardtype" id="cardtype" value="Visa"></label><br>
+            <label>Mastercard <input type="radio" name="cardtype" id="cardtype" value="Mastercard"></label><br>
+            <label>Discover <input type="radio" name="cardtype" id="cardtype" value="Discover"></label><br>
+            <label>American Express <input type="radio" name="cardtype" id="cardtype" value="American Express"></label>
+            <br>
+            <hr>
+            <div>
+                <label for="name">Name On Card</label>
+                <input type="text" name="name" id="name" required><br>
+                <label for="cardNumber">Card Number</label>
+                <input type="text" name="cardNumber" id="cardNumber" required><br>
+                <label for="date">Expiration Date</label>
+                <input type="text" name="date" id="date" required><br>
+                <label for="code">3-Digit Security Code</label>
+                <input type="text" name="code" id="code" required><br>
+            </div>
+            <section>
+                <h2>Billing Info</h2>
+                <label for="address">Address</label>
+                <input type="text" name="address" id="address" required><br>
+                <label for="cityState">City, State</label>
+                <input type="text" name="cityState" id="cityState" required><br>
+                <label for="billingzip">Billing Zip Code</label>
+                <input type="text" name="billingzip" id="billingzip" required><br>
+            </section>
+            <label for="sameAsShipping">Billing address same as shipping?</label>
+            <input type="checkbox" name="sameAsShipping" id="sameAsShipping"><br>
+            <label for="keepOnFile">Keep this card on file for future transactions</label>
+            <input type="checkbox" name="keepOnFile" id="keepOnFile" checked>
+            <br>
+            <button>Buy Now!</button>
+        </form>
+    </main>
+
+<!--Make a file named checkout.html. This will be a form for a credit card checkout-->
+
+<!--Make all fields required except for the checkbox-->
+<!--Add an input for credit card number, expiration month/year, and security code-->
+<!--Add inputs for the billing address-->
+<!--Add a checkbox that says "Keep this credit card on file for future transactions"-->
+<!--The submit button's text should say "Buy Now!"-->
+
+</body>
+</html>
