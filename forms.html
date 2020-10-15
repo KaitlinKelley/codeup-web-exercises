@@ -16,13 +16,15 @@
                     <label for="email">E-mail</label>
                      <input type="text" name="email" id="email" placeholder="Enter your email address" required>
                     <br>
+                    <br>
                     <label for="password">Password</label>
                     <input type="password" name="password" id="password" placeholder="Enter your password" required>
                 </div>
                 <div>
                     <br>
                     <label for="bio">Bio</label>
-                    <textarea name="bio" id="bio" placeholder="Tell us about yourself!"></textarea>
+                    <textarea name="bio" id="bio" rows="6" placeholder="Tell us about yourself!"></textarea>
+                    <br>
                     <br>
                 </div>
                 <fieldset>
@@ -36,15 +38,17 @@
                     <label>Other <input type="radio" name="heardFromWhere4" value="other"></label>
                     <br>
                 </fieldset>
+                <br>
                 <fieldset>
-                    <legend>What web browser are you using?</legend>
-                    <select name="currentBrowser">
+                    <label for="currentBrowser">Which internet browser are you using?</label><br>
+                    <select name="currentBrowser" id="currentBrowser">
                         <option value="safari">Safari</option>
-                        <option value="safari">Firefox</option>
-                        <option value="safari">Chrome</option>
-                        <option value="safari">Opera</option>
+                        <option value="firefox">Firefox</option>
+                        <option value="chrome">Chrome</option>
+                        <option value="opera">Opera</option>
                     </select>
                 </fieldset>
+                <br>
             <button type="submit">Submit</button>
         </form>
     </main>
