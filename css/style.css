@@ -2,3 +2,52 @@
     color: purple;
     text-decoration: underline;
 }
+
+.centered {
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    color: darkblue;
+    text-decoration: underline;
+}
+
+body {
+    background-color: bisque;
+    font-family: Baskerville;
+}
+
+ul {
+    list-style: square;
+}
+
+table {
+    table-layout: auto;
+    table-border-color-dark: forestgreen;
+}
+
+th, td {
+    table-border-color-dark: forestgreen;
+}
+
+img {
+    transform: rotate(45deg)
+    scale(0.6);
+}
+
+a:link {
+    color: darkblue;
+}
+
+a:visited{
+    color: purple;
+}
+
+a:hover{
+    font-size: 1.2em;
+    transition: 0.5s;
+}
