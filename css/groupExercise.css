@@ -1,0 +1,23 @@
+.capital {
+    text-transform:capitalize;
+}
+
+.upper {
+    text-transform: uppercase;
+}
+
+.lower {
+    text-transform: lowercase;
+}
+
+.none {
+    text-transform: none;
+}
+
+.wide {
+    text-transform: full-width;
+}
+
+.inherit {
+    text-transform: inherit;
+}
