@@ -34,7 +34,7 @@ body, html {
     background-color: var(--bg-error);
 }
 
-div {
+.message {
     border-width: 1px;
     border-color: lightgray;
     border-radius: 6px;
