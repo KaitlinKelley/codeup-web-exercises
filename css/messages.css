@@ -7,23 +7,31 @@ body, html {
 }
 
 .message-info {
-    color: #5c5aad;
-    background-color: #cddeff;
+    --text-info: #4f4ba3;
+    --bg-info: #cddeff;
+    color: var(--text-info);
+    background-color: var(--bg-info);
 }
 
 .message-success {
-    color: #559b70;
-    background-color: #cff3da;
+    --text-success: #4a966a;
+    --bg-success: #cff3da;
+    color: var(--text-success);
+    background-color: var(--bg-success);
 }
 
 .message-warning {
-    color: #9e8e36;
-    background-color: #fcfbc9;
+    --text-warning: #9f903b;
+    --bg-warning: #fcfbc9;
+    color: var(--text-warning);
+    background-color: var(--bg-warning);
 }
 
 .message-error {
-    color: #994157;
-    background-color: #fad3d7;
+    --text-error: #994157;
+    --bg-error: #fad3d7;
+    color: var(--text-error);
+    background-color: var(--bg-error);
 }
 
 div {
