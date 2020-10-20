@@ -81,6 +81,15 @@ a {
 
 }
 
+.profile-entry {
+    margin: .5em;
+}
+
+.profile-items {
+    padding: 0;
+    list-style: none;
+}
+
 .timeline {
     width: calc(50% - 1em);
     float: left;
@@ -121,4 +130,23 @@ a {
 
 .container {
     margin-top: 2em;
+}
+
+.media {
+    width: 100%;
+    background-color: var(--light-bg);
+    border-bottom: 1px var(--separator-color);
+    padding: .5em;
+    overflow: auto;
+}
+
+.media-image {
+    max-width: 50px;
+    margin-top: 1.33em;
+    float: left;
+}
+
+.media-body {
+    float: left;
+    width: calc(100% - 50px);
 }
