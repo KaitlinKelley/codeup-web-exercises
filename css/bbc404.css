@@ -8,22 +8,55 @@ body, html {
     width: 100%;
 }
 
-header {
-    position: relative;
+.logo {
+    float: left;
+    padding-bottom: 50px;
+    margin-bottom: 100px;
 }
 
-.nav1 {
-    position: absolute;
-    top: 0;
-    right: 8em;
+.nav-item {
+    float: right;
+    display: inline-block;
+    padding: 1em;
+    border-left: 2px solid grey;
+    text-decoration: none;
+    color: black;
+}
+
+.nav {
+    float: right;
 }
 
 .middle {
-    margin-left: auto;
-    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 200px;
 }
 
 .mice {
     margin-left: auto;
     margin-right: auto;
+}
+
+footer {
+    background-color: #848487;
+    color: white;
+}
+
+.footnav-item {
+    display: inline-block;
+    padding: .5em 1em;
+    text-align: center;
+}
+
+.copyright {
+    text-align: center;
+}
+
+a:hover {
+    background-color: cornflowerblue;
+}
+
+.footnav a:hover {
+    color: white;
+    text-decoration-color: white;
 }
