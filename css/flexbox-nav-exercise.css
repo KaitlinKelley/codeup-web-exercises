@@ -19,6 +19,8 @@ ul {
     align-items: center;
     margin: 0;
     justify-content: space-evenly;
+    position: relative;
+    width: 100%;
 }
 
 
@@ -40,15 +42,25 @@ a:hover {
     font-family: "Work Sans", sans-serif;
     font-size: .8em;
     margin: 1em;
+    z-index: 1;
 }
 
 .logo {
     font-family: "Monserrat", sans-serif;
     margin: auto;
     font-size: 3em;
+    position: absolute;
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.logo > a {
+    margin: auto;
 }
 
 .icon {
     color: black;
     margin: 1em;
+    z-index: 1;
 }
