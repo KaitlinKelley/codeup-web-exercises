@@ -1,6 +1,8 @@
 body {
     min-height: 100vh;
     margin: 0 8px;
+    display: flex;
+    flex-direction: column;
 }
 
 
@@ -12,7 +14,7 @@ footer {
     color: white;
     width: 100%;
     padding: 0;
-    margin: 0;
+    margin-top: auto;
 }
 
 .footerRowContainerTop {
@@ -29,13 +31,7 @@ footer {
 
 hr {
     margin: auto 25px;
-    width: 100%;
 }
-
-ul {
-    list-style: none;
-}
-
 
 .otherContainer {
     display: flex;
