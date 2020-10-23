@@ -26,6 +26,8 @@ ul {
 
 li {
     display: inline-block;
+    margin: 1em;
+    justify-content: space-between;
 
 }
 
@@ -34,9 +36,10 @@ a {
     text-decoration: none;
 }
 
-a:hover {
+.text a:hover, .icon a:hover {
     color: blue;
 }
+
 
 .text {
     font-family: "Work Sans", sans-serif;
