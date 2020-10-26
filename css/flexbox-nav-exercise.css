@@ -27,7 +27,7 @@ ul {
 li {
     display: inline-block;
     margin: 1em;
-    justify-content: space-between;
+    justify-content: space-evenly;
 
 }
 
@@ -66,4 +66,12 @@ a {
     color: black;
     margin: 1em;
     z-index: 1;
+}
+
+li:nth-child(4) {
+    margin-right: auto;
+}
+
+li:nth-child(5){
+    margin-left: auto;
 }
