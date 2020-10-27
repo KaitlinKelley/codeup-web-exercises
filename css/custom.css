@@ -1,5 +1,4 @@
 .jumbotron {
-    background-color: grey;
     background-image: url("../img/pizza.png");
     background-size: cover;
 }
@@ -17,3 +16,19 @@ h1 {
     padding: 0;
     opacity: 50%;
 }
+
+hr {
+    width: 100%;
+}
+
+.footer-button {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-left: auto;
+}
+
+/*.group-button {*/
+/*    margin-left: auto;*/
+/*    flex-grow: 0;*/
+/*}*/
