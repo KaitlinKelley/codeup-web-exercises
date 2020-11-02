@@ -3,11 +3,28 @@
 <head>
     <meta charset="utf-8">
     <title>Defuse the BOM</title>
+    <style>
+        .bomb {
+            padding: 3em;
+            margin:8em;
+
+        }
+
+        .bomb:hover {
+            transform: scale(3);
+            -webkit-transition: 5s ease-in-out;
+            -moz-transition: 5s ease-in-out;
+            -o-transition: 5s ease-in-out;
+            transition: 5s ease-in-out;
+        }
+    </style>
 </head>
 <body>
 
+
 <h2 id="message">This BOM will self destruct in <span id="timer">5</span> seconds...</h2>
-<button id="defuser">Defuse the BOM</button>
+<button id="defuser">Defuse the BOM</button><br>
+<img src="img/cartoon-bomb-pop-art-style_81894-2844.jpg" alt="bomb" id="bomb" class="bomb">
 
 <script>
 (function() {
@@ -19,6 +36,7 @@
     function updateTimer() {
         if (detonationTimer == 0) {
             alert('EXTERMINATE!');
+            // showImage();
             document.body.innerHTML = '';
         } else if (detonationTimer > 0) {
             document.getElementById('timer').innerHTML = detonationTimer;
@@ -33,7 +51,14 @@
     // cancel the interval/timeout for updateTimer()
     function defuseTheBOM() {
             clearInterval(intervalId);
+            alert("Whew! You saved the day!");
     }
+
+    // function showImage(){
+    //     document.getElementById('explode').style.display='block';
+    // }
+
+
 
     // Don't modify anything below this line!
     //
