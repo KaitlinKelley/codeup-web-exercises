@@ -45,18 +45,15 @@
         detonationTimer--;
     }
 
-    var intervalId = setInterval(updateTimer, 1000);
+    var bombBOM = setInterval(updateTimer, 1000);
 
     // TODO: When this function runs, it needs to
     // cancel the interval/timeout for updateTimer()
     function defuseTheBOM() {
-            clearInterval(intervalId);
+            clearInterval(bombBOM);
             alert("Whew! You saved the day!");
     }
 
-    // function showImage(){
-    //     document.getElementById('explode').style.display='block';
-    // }
 
 
 
