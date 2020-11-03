@@ -27,7 +27,8 @@
 <button id="btn1">Do Thing 1</button>
 <button id="btn2">Do Thing 2</button>
 <button id="btn3">Do Thing 3</button>
-<button id="btn4">Do Thing 4</button>
+<button id="btn4">Do Thing 4</button><br>
+<button id="btn5">Reset The Things</button>
 
 <script>
     (function() {
@@ -58,10 +59,20 @@
             subParagraphs[0].innerText = "Mission Accomplished!"
         }
 
+        var resetAll = function(){
+            mainHeader.innerHTML = "Hello World!";
+            subHeader.style.color = "black";
+            for (var i=0; i < listItems.length; i++){
+                    listItems[i].style.color = "black";
+            };
+            subParagraphs[0].innerText = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enimad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor inreprehenderit in voluptate velit esse cillum dolore eu fugiat nullapariatur. Excepteur sint occaecat cupidatat non proident, sunt inculpa qui officia deserunt mollit anim id est laborum.";
+        }
+
         document.getElementById("btn1").addEventListener("click", changeMainHeader);
         document.getElementById("btn2").addEventListener("click", changeToBlue);
         document.getElementById("btn3").addEventListener("click", changeToGreyAndBlue);
         document.getElementById("btn4").addEventListener("click", missionAccomplished);
+        document.getElementById("btn5").addEventListener("click", resetAll);
 
 
         // // TODO: Uncomment next line and get the main header element by id
