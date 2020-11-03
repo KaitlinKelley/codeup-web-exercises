@@ -8,6 +8,10 @@
     <title>Document</title>
 </head>
 <body>
+<h1 id="current-time">0</h1>
+<button id="start">Start</button>
+<button id="pause">Pause</button>
+<button id="reset">Reset</button>
 
 
 
@@ -21,29 +25,29 @@
 
         <!--A 'stopSinging' function, when called during the 'song', will stop the lyrics immdiately before finishing.-->
 
-        var lyricArray = ["All a-...","-round the...","mulberry...","bush...the", "monkey...","chased the...","wea-...","sel...The","monkey...","stopped to...","pull up his...","sock...","Pop!...","goes the...","wea-...","-sel..."];
+        // var lyricArray = ["All a-...","-round the...","mulberry...","bush...the", "monkey...","chased the...","wea-...","sel...The","monkey...","stopped to...","pull up his...","sock...","Pop!...","goes the...","wea-...","-sel..."];
+        //
+        // function playSinging() {
+        //     var i = 0;
+        //
+        //     var intervalId = setInterval(function () {
+        //         if (i === lyricArray.length) {
+        //             clearInterval(intervalId);
+        //             console.log("Ta-dah!!");
+        //         }
+        //
+        //         console.log(lyricArray[i]);
+        //         i++
+        //     }, 1000);
+        //
+        //
+        // }
 
-        function playSinging() {
-            var i = 0;
 
-            var intervalId = setInterval(function () {
-                if (i === lyricArray.length) {
-                    clearInterval(intervalId);
-                    console.log("Ta-dah!!");
-                }
-
-                console.log(lyricArray[i]);
-                i++
-            }, 1000);
-
-
-        }
-
-
-        //This doesn't work yet...........
-        function stopSinging() {
-            clearInterval(intervalId);
-        };
+        // //This doesn't work yet...........
+        // function stopSinging() {
+        //     clearInterval(intervalId);
+        // };
 
 
         <!--Define an object called stopWatch.-->
@@ -58,17 +62,38 @@
         <!--start() - starts console logging an increasing count every second-->
         <!--pause() - pauses counter-->
         <!--reset() - stops counter and resets count to zero-->
+        var intervalId = 0;
+        var count = 0;
+
 
         var stopWatch = {
-            intervalId:
-            count: 0;
-            start: setInterval(function(){
-                console.log(this.count);
-                this.count++;
-            }, 1000);
-            pause: clearInterval(start);
-            reset: function()
+            //This isn't set until we start
+            start: function(){
+                    intervalId = setInterval(function(){
+                        if(isNaN(count)){
+                            count = 0;
+                        }
+                        count += 1;
+                        document.getElementById("current-time").innerText = count;
+                    }, 1000);
+            },
+            pause: function(){
+                clearInterval(intervalId);
+            },
+            reset: function(){
+                count = 0;
+                document.getElementById("current-time").innerText = count;
+                clearInterval(intervalId);
+            },
         }
+
+        var startButton = document.getElementById("start");
+        var pauseButton = document.getElementById("pause");
+        var resetButton = document.getElementById("reset");
+        startButton.addEventListener("click", stopWatch.start);
+        pauseButton.addEventListener("click", stopWatch.pause);
+        resetButton.addEventListener("click", stopWatch.reset);
+
 
 
 
