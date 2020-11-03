@@ -49,6 +49,7 @@
                 listItems[i].style.color = "grey";
             }
         }
+
         // TODO: Set text color of li with dbid = 1 to blue
         for (var i=0; i < listItems.length; i++){
             if(listItems[i].getAttribute("data-dbid") === "1"){
@@ -56,8 +57,16 @@
             }
         }
 
+        //Could also add the below code snippet to the first loop(check for blue, then grey)
 
+        // if(listItems[i].getAttribute("data-dbid") === "2"){
+        //     listItems[i].style.color = "blue";
+        //     continue;
+        // }
 
+        //===================OR================
+        //This is kinda wrong, needs fixing
+        document.querySelector("[data-dbid="1"]")
 
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
         var subParagraphs = document.getElementsByClassName("sub-paragraph");
