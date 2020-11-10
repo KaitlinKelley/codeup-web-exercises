@@ -10,7 +10,36 @@
 <body>
     <h1>jQuery Exercise</h1>
 <!--    jQuery === $   -->
-    <h3>gonna have fun with $......</h3>
+    <p>gonna have fun with $......</p>
+    <ul id="first-list">
+        <h3>Here's a list of random words:</h3>
+        <li class="list-item code-up" id="first">Pumpkin</li>
+        <li class="list-item">Sock</li>
+        <li class="list-item code-up">Feather</li>
+        <li class="list-item">Airplane</li>
+        <li class="list-item">Sand</li>
+    </ul>
+
+    <div id="div" class="first-div">
+        <p>More random content....hooray....</p>
+        <ol>
+            <li class="other-list-item">One</li>
+            <li class="other-list-item">Two</li>
+            <li class="other-list-item">Three</li>
+            <li class="other-list-item code-up">Four</li>
+            <li class="other-list-item">Five</li>
+        </ol>
+    </div>
+
+    <div id="lone-div" class="last-div">
+        This is the last div.
+    </div>
+
+    <p>A sentence.</p>
+
+    <p class="code-up">Another sentence!</p>
+
+    <h1>Yet ANOTHER sentence.</h1>
 
 
 
@@ -27,7 +56,15 @@
         $(document).ready(function(){
         "use strict";
         //Rest of my custom js goes in here
-            alert("The DOM has finished loading!");
+        //     alert("The DOM has finished loading!");
+
+            $("li, p, h1, p.code-up, div#lone-div").css("font-size", "40px").css("background-color", "yellow");
+
+            var headerContent = $("h1").text();
+
+            alert(headerContent);
+
+
 
 
 
