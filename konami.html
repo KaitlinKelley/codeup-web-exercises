@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Konami Code</title>
+    <link rel="stylesheet" href="css/konami.css">
+</head>
+<body>
+    <h1 class="to-hide">Konami Code</h1>
+    <h3 class="to-hide">Using the keyboard, please enter the correct sequence.</h3>
+    <h1 class="show-on-victory">Congratulations! You are Correct!</h1>
+    <h1 class="show-on-loss">Boo. Refresh the page and try again.</h1>
+
+    <audio id="audio" style="display:none">
+        <source id="victory-audio" src="audio/secret.mp3" type="audio/mpeg">
+    </audio>
+
+<script src="js/jquery-2.2.4.js"></script>
+<script>
+    "use strict";
+
+    var userInput = [];
+    var konamiCode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 13];
+    var correctSeq = false;
+    // var victorySound = $("#victory-audio");
+
+
+
+
+    $(document).keyup(function(event){
+        console.log(event.keyCode);
+        userInput.push(event.keyCode);
+    });
+
+
+    $(document).keyup(function(e){
+        if(e.keyCode === 13){
+            compareArrays(userInput, konamiCode);
+            if(!correctSeq){
+                lose();
+            }else if(correctSeq){
+                win();
+            }
+        }
+    });
+
+
+    function compareArrays(arr1, arr2) {
+        var correctNums = 0;
+        if (arr1.length === arr2.length) {
+            for (var i = 0; i < arr2.length; i++) {
+                if (arr1[i] === arr2[i]) {
+                    correctNums++;
+                }
+                if (correctNums === arr2.length) {
+                    correctSeq = true;
+                }
+            }
+            return correctSeq;
+        }
+    }
+
+    function win(){
+        // victorySound.play();
+        $(".show-on-victory").css("display", "block");
+        $("body").css("background", "green");
+    }
+
+    function lose(){
+        $(".show-on-loss").css("display", "block");
+        $("body").css("background", "red");
+        $(".to-hide").css("display", "none");
+
+    }
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

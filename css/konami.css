@@ -1,0 +1,11 @@
+.show-on-loss {
+    display: none;
+    margin: auto;
+    text-align: center;
+}
+
+.show-on-victory {
+    display: none;
+    margin: auto;
+    text-align: center;
+}
