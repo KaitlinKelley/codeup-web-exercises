@@ -7,12 +7,15 @@
 <body>
     <h1 class="to-hide">Konami Code</h1>
     <h3 class="to-hide">Using the keyboard, please enter the correct sequence.</h3>
-    <h1 class="show-on-victory">Congratulations! You are Correct!</h1>
-    <h1 class="show-on-loss">Boo. Refresh the page and try again.</h1>
+    <h1 class="show-on-victory">Congratulations! You found the Master Sword!</h1>
+<!--    <h1 class="show-on-loss">Boo. Refresh the page and try again.</h1>-->
 
     <audio id="audio" style="display:none">
         <source id="victory-audio" src="audio/secret.mp3" type="audio/mpeg">
     </audio>
+
+    <img class="link show-on-victory" src="img/62-629268_link-from-legend-of-zelda-super-nintendo-zelda.png" alt="">
+    <img class="ganon show-on-loss" src="img/Game_Over_%2528The_Adventure_of_Link%2529.png" alt="">
 
 <script src="js/jquery-2.2.4.js"></script>
 <script>
@@ -21,9 +24,7 @@
     var userInput = [];
     var konamiCode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 13];
     var correctSeq = false;
-    // var victorySound = $("#victory-audio");
-
-
+    // var victorySound = $("#audio");
 
 
     $(document).keyup(function(event){
@@ -63,13 +64,13 @@
         // victorySound.play();
         $(".show-on-victory").css("display", "block");
         $("body").css("background", "green");
+        $(".to-hide").css("display", "none");
     }
 
     function lose(){
         $(".show-on-loss").css("display", "block");
-        $("body").css("background", "red");
+        $("body").css("background", "#F3371D");
         $(".to-hide").css("display", "none");
-
     }
 
 

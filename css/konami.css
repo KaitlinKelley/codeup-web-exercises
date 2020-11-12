@@ -1,11 +1,26 @@
 .show-on-loss {
     display: none;
-    margin: auto;
+    margin: 5em auto 2em auto;
     text-align: center;
+    z-index: 2
 }
 
 .show-on-victory {
     display: none;
-    margin: auto;
+    margin: 5em auto 2em auto;
     text-align: center;
+    z-index: 1;
+}
+
+.link {
+    height: 300px;
+    width: 300px;
+    display: none;
+}
+
+.ganon {
+    margin-top: 3.5em;
+    height: 700px;
+    width: 700px;
+    display: none;
 }
