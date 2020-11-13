@@ -6,6 +6,8 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
     <style>
         .invisible {
             visibility: hidden;
@@ -20,9 +22,27 @@
             margin-bottom: 1em;
         }
 
+        li,h2 {
+            display: none;
+        }
+
+        .alert-msg {
+            width: 35%;
+            justify-content: center;
+        }
+
     </style>
 </head>
 <body>
+
+    <div class="alert alert-warning alert-dismissible fade show alert-msg" role="alert">
+        <strong>Hi there!</strong> Would you like to sign up for <a href="#" class="alert-link">our newsletter?</a>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+
     <h1>Astronomical Bodies FAQs</h1>
 
     <a href="#" id="show-hide">Show Facts</a>
@@ -61,6 +81,28 @@
 
         <hr>
 
+
+        <div class="modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Hi there!</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Would you like to register for our website?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Nah</button>
+                        <button type="button" class="btn btn-primary">Sure thing!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
     </dl>
     <h3 id="national-parks-heading">National Parks</h3>
     <ul id="national-parks">
@@ -89,7 +131,10 @@
     <button class="highlight-last">Highlight Last</button>
 
 
-<script src="js/jquery-2.2.4.js"></script>
+    <script src="js/jquery-2.2.4.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+
 
 <script>
     "use strict";
@@ -113,13 +158,27 @@
             })
         })
 
-        $("h3").click(function(){
-            $(this).next().children().css("font-weight", "bold");
-        })
+        // $("h3").click(function(){
+        //     $(this).next().children().css("font-weight", "bold");
+        // })
 
         $("li").click(function(){
             $(this).parent().children().first().css("color", "blue");
         })
+
+        $(".close").click(function(){
+            $(this).parent().fadeOut(200);
+        })
+
+        $("h3").click(function(){
+            $(this).next().children().slideToggle();
+        })
+
+        setInterval(askForSignUp,8000);
+
+        function askForSignUp(){
+            $("h2").fadeIn(300);
+        }
 
 
 

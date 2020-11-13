@@ -91,11 +91,15 @@
         $(leftBtn).click(function(){
             $(leftPos).html(centerPosHtml);
             $(centerPos).html(leftPosHtml);
+            centerPosHtml = $(leftPos).html();
+            leftPosHtml = $(centerPos).html();
         });
 
         $(rightBtn).click(function(){
             $(rightPos).html(centerPosHtml);
             $(centerPos).html(rightPosHtml);
+            centerPosHtml = $(rightPos).html();
+            rightPosHtml = $(centerPos).html();
         })
 
 
