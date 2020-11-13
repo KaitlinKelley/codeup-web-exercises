@@ -144,8 +144,30 @@ $(document).ready(function() {
      *********************************************/
 
     //TODO TOGETHER: Using the each method, highlight every other list item in the Ravenclaw house
+
+    // $("#ravenclaw li").each(function(index){
+    //     if(index % 2 === 0){
+    //         $(this).css("background", "yellow");
+    //     }
+    // });
+
+    //OR===============
+
+    $("#ravenclaw").children().each(function(index){
+            if(index % 2 === 0){
+                $(this).css("background", "yellow");
+            }
+    });
+
+
     //TODO TOGETHER: Change the font color of the first list element in Hufflepuff
+
+    $("#hufflepuff").children().first().css("color", "red");
+
+
     //TODO TOGETHER: Change the font color of the last list element in Slytherin
+
+    $("#slytherin").children().last().css("color", "blue");
 
     //TODO TOGETHER: When the 'Witches' button is clicked, highlight all names that have been assigned the class of 'witches'
     $('#highlight-witches').click(function(e){
