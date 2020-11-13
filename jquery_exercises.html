@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Intro to jQuery</title>
+</head>
+<body>
+    <h1>jQuery Exercise</h1>
+<!--    jQuery === $   -->
+    <p>gonna have fun with $......</p>
+    <ul id="first-list">
+        <h3>Here's a list of random words:</h3>
+        <li class="list-item code-up" id="first">Pumpkin</li>
+        <li class="list-item">Sock</li>
+        <li class="list-item code-up">Feather</li>
+        <li class="list-item">Airplane</li>
+        <li class="list-item">Sand</li>
+    </ul>
+
+    <div id="div" class="first-div">
+        <p>More random content....hooray....</p>
+        <ol>
+            <li class="other-list-item">One</li>
+            <li class="other-list-item">Two</li>
+            <li class="other-list-item">Three</li>
+            <li class="other-list-item code-up">Four</li>
+            <li class="other-list-item">Five</li>
+        </ol>
+    </div>
+
+    <div id="lone-div" class="last-div">
+        This is the last div.
+    </div>
+
+    <p>A sentence.</p>
+
+    <p class="code-up">Another sentence!</p>
+
+    <h1>Yet ANOTHER sentence.</h1>
+
+
+
+
+
+
+
+
+    <script src="js/jquery-2.2.4.js"></script>
+    <script>
+// <!--            1. wrap the code in a function to protect code from global scope-->
+// //              2. will wait to run your code until the DOM is fully loaded, but will load before images are loaded up
+//                 3. Replaces the IFFE
+        $(document).ready(function(){
+        "use strict";
+        //Rest of my custom js goes in here
+        //     alert("The DOM has finished loading!");
+
+           $("h1").click(function(){
+               $(this).css("background-color", "purple");
+           })
+
+           $("p").dblclick(function(){
+               $(this).css("font-size", "18px");
+           })
+
+           $("li").hover(
+               function(){
+                   $(this).css("color", "red");
+               },
+               function(){
+                   $(this).css("color", "black");
+               }
+           );
+
+
+
+
+
+        });
+
+
+
+
+    </script>
+</body>
+</html>

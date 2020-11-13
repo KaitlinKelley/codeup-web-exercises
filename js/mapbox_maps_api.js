@@ -55,6 +55,8 @@ restaurantArray.forEach(function(restaurant){
 })
 
 
+
+
 //THIS DOESN'T WORK YET===================
 function zoomChange(){
     var currentZoom = mapOptions.zoom;

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Konami Code</title>
+    <link rel="stylesheet" href="css/konami.css">
+</head>
+<body>
+    <h1 class="to-hide">Konami Code</h1>
+    <h3 class="to-hide">Using the keyboard, please enter the correct sequence and press Enter.</h3>
+    <h1 class="show-on-victory">Congratulations! You found the Master Sword!</h1>
+    <div class="to-hide">
+        <h2 id="message">You have <span id="timer">10</span> seconds...</h2>
+    </div>
+
+    <audio id="audio" style="display:none">
+        <source id="victory-audio" src="audio/LOZ_Fanfare.wav" type="audio/wav">
+    </audio>
+    <audio id="audio2" style="display:none">
+        <source id="loss-audio" src="audio/Sound%20Effect%20(22).wav" type="audio/wav">
+    </audio>
+
+    <img class="link show-on-victory" src="img/62-629268_link-from-legend-of-zelda-super-nintendo-zelda.png" alt="">
+    <img class="ganon show-on-loss" src="img/Game_Over_%2528The_Adventure_of_Link%2529.png" alt="">
+
+<script src="js/jquery-2.2.4.js"></script>
+<script>
+    "use strict";
+
+    var userInput = [];
+    var konamiCode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 13];
+    var correctSeq = false;
+    var victorySound = $("#audio");
+    var lossSound = $("#audio2");
+    var countdownTimer = 10;
+
+
+
+    $(document).keyup(function(event){
+        console.log(event.keyCode);
+        userInput.push(event.keyCode);
+    });
+
+
+    $(document).keyup(function(e){
+        if(e.keyCode === 13){
+            compareArrays(userInput, konamiCode);
+            if(!correctSeq && countdownTimer > 0){
+                lose();
+            }else if(correctSeq){
+                win();
+            }
+        }
+    });
+
+
+    function compareArrays(arr1, arr2) {
+        var correctNums = 0;
+        if (arr1.length === arr2.length) {
+            for (var i = 0; i < arr2.length; i++) {
+                if (arr1[i] === arr2[i]) {
+                    correctNums++;
+                }
+                if (correctNums === arr2.length) {
+                    correctSeq = true;
+                }
+            }
+            return correctSeq;
+        }
+    }
+
+
+    function win(){
+        victorySound[0].play();
+        $(".show-on-victory").css("display", "block");
+        $("body").css("background", "#42C752");
+        $(".to-hide").css("display", "none");
+        clearInterval(intervalId);
+    }
+
+    function lose(){
+        lossSound[0].play();
+        $(".show-on-loss").css("display", "block");
+        $("body").css("background", "#F3371D");
+        $(".to-hide").css("display", "none");
+        clearInterval(intervalId);
+    }
+
+
+    function updateTimer() {
+        if (countdownTimer === 0) {
+            lose();
+        } else if (countdownTimer > 0) {
+            document.getElementById('timer').innerHTML = countdownTimer;
+        }
+
+        countdownTimer--;
+    }
+
+    var intervalId = setInterval(updateTimer, 1000);
+
+
+
+
+</script>
+</body>
+</html>
