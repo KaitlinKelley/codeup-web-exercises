@@ -7,15 +7,17 @@
 
 .show-on-victory {
     display: none;
-    margin: 5em auto 2em auto;
+    margin: 3em auto 2em auto;
     text-align: center;
     z-index: 1;
+    font-size: 60px;
 }
 
 .link {
     height: 300px;
     width: 300px;
     display: none;
+    margin-top: 3em;
 }
 
 .ganon {
@@ -23,4 +25,9 @@
     height: 700px;
     width: 700px;
     display: none;
+}
+
+.to-hide {
+    margin: 3em auto 2em auto;
+    text-align: center;
 }
