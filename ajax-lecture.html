@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AJAX Lecture</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<body>
+
+<main class="container mt-5">
+    <h1 class="my-5">Intro to AJAX</h1>
+    <form method="GET" action="https://hookb.in/Xk6xMEjQNYSbobmZEyxD">
+        <div class="input-group">
+            <input placeholder="Enter username" class="form-control" type="text" name="username">
+        </div>
+        <button class="btn btn-success my-2">Submit</button>
+    </form>
+    <a href="https://hookb.in/Xk6xMEjQNYSbobmZEyxD?username=test">Some Link</a>
+</main>
+
+<script
+        src="https://code.jquery.com/jquery-3.4.0.min.js"
+        integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script>
+
+    $(document).ready(function() {
+
+        "use strict";
+
+        // simple request
+
+        //Make an AJAX request to the Star Wars API
+        // console.log($.ajax("https://swapi.dev/api/people/1"));
+        //The line above won't actually get us the info we want
+        //Represents the jQuery request object
+
+        // $.ajax("https://swapi.dev/api/people/1").done(function(data){
+        //     console.log(data);
+        //     console.log(data.eye_color);
+        //     console.log(data["eye_color"]);
+        //     console.log(data.vehicles[0]);
+        //    parameter can be called whatever, but has to match what is inside the function
+        //    will wait to run the function until it actually has the info from the API
+        // });
+
+        //.done() kinda looks like this...
+        // function done(callbackFunction){
+        //     --wait for the request--
+        //     var data = fulfilled data from the request
+        //     callbackFunction(data);
+        // }
+
+        // $.ajax("data/orders.json").done(function(data){
+        //     console.log(data);
+        //     console.log(data[1].orderedBy);
+        //     console.log(data[0].orderedBy + " ordered a: " + data[0].itemOrdered);
+        //     console.log(data[2].orderedBy + " is order number: " + data[2].orderNumber);
+        //
+        // });
+        //
+        // $.ajax("https://swapi.dev/api/species/4/").done(function(data){
+        //     console.log(data.name);
+        //     console.log(data.language);
+        // })
+        //
+        // $.ajax("https://swapi.dev/api/planets/42/").done(function(data){
+        //     console.log(data.name);
+        //     console.log(data.rotation_period);
+        //     console.log(data.climate);
+        //     console.log(data.terrain);
+        //     console.log(data.residents[0]);
+        // })
+        //
+        // $.ajax("https://swapi.dev/api/people/51/").done(function(data){
+        //     console.log(data.name);
+        //     console.log(data.films[1]);
+        //     console.log(data.starships);
+        // })
+
+
+
+
+        // $.ajax('./data/orders.json'); // jQuery request object
+        //
+        // $.ajax("./data/orders.json").done(function(responseData){
+        //     console.log(responseData);
+        // });
+
+        // DOESN'T WORK
+        //     var responseData;
+        //     $.ajax('./data/orders.json').done(function(data) {
+        //         responseData = data;
+        //     }); // .done()
+        //
+        //     console.log(responseData);
+        //    In this example, the console log will fire before the ajax request is actually finished, so the variable won't actually be set yet.
+        // Console will instead show "undefined"
+        //Might work with a setTimeout, but it's not considered best practice
+
+
+        // simple API request
+
+        // $.ajax("https://swapi.dev/api/films").done(function(data){
+        //     console.log(data);
+        // });
+
+
+        // single argument with .done(), .fail() and .always() methods
+
+        // $.ajax({
+        //     "url": "https://swapi.dev/api/films",
+        //     "type": "GET",
+        //     "data": {
+        //         "search": "A New Hope"
+        //     }
+        // }).done(function(data, status, jqXhr) {
+        //     // console.log(status);
+        //     console.log(data);
+        //     console.log("The director of Star Wars: A New Hope is..." + data.results[0].director);
+        // }).fail(function(jqXhr, status, error) {
+        //     console.log("Request failed! " + status);
+        // }).always(function() {
+        //     console.log("Request made.");
+        // });
+
+
+        // Url first argument and configuration object second argument
+
+        // $.ajax("https://swapi.dev/api/films", {
+        //     "type": "GET",
+        //     "data": {
+        //         "search": "A New Hope"
+        //     }
+        // }).done(function(data) {
+        //     console.log("The director of Star Wars: A New Hope is..." + data.results[0].director);
+        // });
+
+
+        // Storing returned jQuery XML HTTP Response object
+
+        var jqXhr = $.ajax("https://swapi.dev/api/films", {
+            "type": "GET",
+            "data": {
+                "search": "A New Hope"
+            }
+        });
+
+        //Can also assign the url and configObj to variables
+
+        // console.log(jqXhr);
+        //
+        // jqXhr.done(function(data) {
+        //     console.log("The director of Star Wars: A New Hope is..." + data.results[0].director);
+        // });
+        //
+        // jqXhr.fail(function(jqXhr, status, error){
+        //     console.log(status);
+        // })
+
+
+        // GET short-hand method
+
+        // $.get("https://swapi.dev/api/films", {
+        //     "search": "A New Hope"
+        // }).done(function(data) {
+        //     console.log("The director of Star Wars: A New Hope is..." + data.results[0].director);
+        // });
+
+    });
+
+</script>
+
+</body>
+</html>
