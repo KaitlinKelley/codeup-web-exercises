@@ -30,5 +30,20 @@
             "tool"
         ],
         "price": 10
+    }, {
+        "title": "Nails",
+        "quantity": 600,
+        "categories": [
+            "tool"
+        ],
+        "price": 0.5
+    }, {
+        "title": "Levels",
+        "quantity": 20,
+        "categories": [
+            "tool"
+        ],
+        "price": 15
     }
+
 ]

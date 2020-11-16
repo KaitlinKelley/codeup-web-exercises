@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ajax Blog</title>
+</head>
+<body>
+    <h1>Ajax Blog</h1>
+    <div id="posts">
+        <h3>Title</h3>
+        <p>Content</p>
+        <p>Categories</p>
+        <p>Date</p>
+    </div>
+
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function(){
+
+        $.ajax("data/blog.json").done(function(data){
+            renderHTML(data);
+        })
+
+        function renderHTML(blogObj){
+            var html = "";
+            blogObj.forEach(function(entry){
+                html += "<h3>" + entry.title + "<h3>" + "<br>";
+                html += "<p id='date'><em>" + entry.date + "</em><p>" + "<br>";
+                html += "<p id='content'>" + entry.content + "<p>" + "<br>";
+                html += "<p id='categories'> Categories: " + entry.categories + "<p>" + "<br>";
+            })
+
+            $("#posts").html(html);
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+    })();
+
+
+
+</script>
+</body>
+</html>
