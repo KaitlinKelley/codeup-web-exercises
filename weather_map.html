@@ -120,39 +120,16 @@
             .setLngLat([-98.4861, 29.4260])
             .addTo(map);
 
-            map.addControl(
+
+        currentMarker.on('dragend', updateWeatherViaMarker);
+
+
+        map.addControl(
                 new MapboxGeocoder({
                     accessToken: mapboxToken,
-                    mapboxgl: mapboxgl
-                })
+                    mapboxgl: mapboxgl,
+                }),
             );
-
-
-        // GET REQUEST to OpenWeatherMap using city parameter
-        // https://openweathermap.org/current
-        // q <-- parameters from weather map docs
-        // APPID <-- weather api key in keys.js file
-        // $.get("http://api.openweathermap.org/data/2.5/weather", {
-        //     APPID: openWeatherKey,
-        //     q: "San Antonio, US",
-        //     units: "imperial"
-        // }).done(function (data) {
-        //     console.log(data);
-        // });
-
-
-
-        // GET REQUEST to OpenWeatherMap using lat and lng parameter
-        // $.get("http://api.openweathermap.org/data/2.5/weather", {
-        //     APPID: openWeatherKey,
-        //     lat: 29.423017,
-        //     lon: -98.48527,
-        //     units: "imperial"
-        // }).done(function (data) {
-        //     console.log(data);
-        // });
-
-        // function getCurrentWeather(){
 
 
             //this will run as soon as the page loads-----------------------
@@ -164,12 +141,15 @@
                 exclude: "minutely,hourly,alerts"
             }).done(function (data) {
                 createCardHTML(data);
-                // var currentLngLat = currentMarker.getLngLat();
                 $(".current-location-display").text("San Antonio, Texas");
             });
 
+
+
+
         function updateWeatherViaMarker(){
             var currentLngLat = currentMarker.getLngLat();
+            console.log(currentLngLat);
             $.get("https://api.openweathermap.org/data/2.5/onecall", {
                 APPID: openWeatherKey,
                 lat: currentLngLat.lat,
@@ -178,19 +158,13 @@
                 exclude: "minutely,hourly,alerts"
             }).done(function (data) {
                 createCardHTML(data);
-                $(".current-location-display").text(reverseGeocode(currentLngLat, mapboxToken));
-                console.log($(".current-location-display").text());
+               reverseGeocode(currentLngLat, mapboxToken).then(function(e){
+                $(".current-location-display").text(e);
+                   console.log(e);
+               });
             });
         }
 
-            currentMarker.on('dragend', updateWeatherViaMarker);
-
-
-        // function getLocationFromMarker(){
-        //     var currentLngLat = currentMarker.getLngLat();
-        //     console.log(currentLngLat);
-        //     $(".current-location-display").html(currentLngLat);
-        // }
 
 
         function createCardHTML(weatherObj) {
@@ -233,7 +207,45 @@
 
 
 
-    }
+
+            // GET REQUEST to OpenWeatherMap using city parameter
+            // https://openweathermap.org/current
+            // q <-- parameters from weather map docs
+            // APPID <-- weather api key in keys.js file
+            // $.get("http://api.openweathermap.org/data/2.5/weather", {
+            //     APPID: openWeatherKey,
+            //     q: "San Antonio, US",
+            //     units: "imperial"
+            // }).done(function (data) {
+            //     console.log(data);
+            // });
+
+
+
+            // GET REQUEST to OpenWeatherMap using lat and lng parameter
+            // $.get("http://api.openweathermap.org/data/2.5/weather", {
+            //     APPID: openWeatherKey,
+            //     lat: 29.423017,
+            //     lon: -98.48527,
+            //     units: "imperial"
+            // }).done(function (data) {
+            //     console.log(data);
+            // });
+
+            // function getCurrentWeather(){
+
+
+
+
+
+
+
+
+
+
+
+
+        }
     )
 
 
