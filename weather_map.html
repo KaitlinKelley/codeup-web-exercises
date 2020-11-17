@@ -48,19 +48,6 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-<!--        <div class="collapse navbar-collapse" id="navbarText">-->
-<!--            <ul class="navbar-nav mr-auto">-->
-<!--                <li class="nav-item active">-->
-<!--                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>-->
-<!--                </li>-->
-<!--                <li class="nav-item">-->
-<!--                    <a class="nav-link" href="#">Features</a>-->
-<!--                </li>-->
-<!--                <li class="nav-item">-->
-<!--                    <a class="nav-link" href="#">Pricing</a>-->
-<!--                </li>-->
-<!--            </ul>-->
-<!--        </div>-->
             <span class="navbar-text">
           Current Location: <span class="current-location-display"></span>
         </span>
@@ -98,6 +85,12 @@
         crossorigin="anonymous"></script>
 <script src="js/keys.js"></script>
 <script src="js/mapbox-geocoder-utils.js"></script>
+<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.min.js"></script>
+<link
+        rel="stylesheet"
+        href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.css"
+        type="text/css"
+/>
 
 
 <script>
@@ -126,6 +119,13 @@
         var currentMarker = new mapboxgl.Marker(markerOptions)
             .setLngLat([-98.4861, 29.4260])
             .addTo(map);
+
+            map.addControl(
+                new MapboxGeocoder({
+                    accessToken: mapboxToken,
+                    mapboxgl: mapboxgl
+                })
+            );
 
 
         // GET REQUEST to OpenWeatherMap using city parameter
