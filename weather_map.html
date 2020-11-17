@@ -166,7 +166,8 @@
 
         function createCardHTML(day) {
             var cardHtml = "";
-            cardHtml += "<div class='card'><h5 class='card-header'>" + day.current.dt + "</h5>";
+            var currentDateCode = day.current.dt;
+            cardHtml += "<div class='card'><h5 class='card-header'>" + convertDate(currentDateCode) + "</h5>";
             cardHtml += "<div class='card-body'>";
             cardHtml += "<h5 class='card-title'>" + day.current.temp + "</h5>";
             cardHtml += "<p class='card-title'>" + day.current.weather[0].description + "</p>";
@@ -181,17 +182,20 @@
             $(".weather-card-container").html(cardHtml);
         }
 
-        var currentDateCode = day.current.dt;
+        // var currentDateCode = day.current.dt;
 
 
         function convertDate(unixDate){
-            var today = new Date();
-            var dd = String(today.getDate()).padStart(2, '0');
-            var mm = String(today.getMonth() + 1).padStart(2, '0');
-            var yyyy = today.getFullYear();
-            today = mm + '/' + dd + '/' + yyyy;
-            return today;
+            var monthsArray = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+            var date = new Date(unixDate*1000);
+            var year = date.getFullYear();
+            var month = monthsArray[date.getMonth()];
+            var day = date.getDate();
+            var convertedDate = month + " " + day + ", " + year;
+            return convertedDate;
         }
+
+
 
 
 
