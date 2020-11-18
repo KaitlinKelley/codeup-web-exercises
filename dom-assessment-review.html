@@ -40,13 +40,6 @@
         //     <!-- - Allow the user to type in their favorite food into the input and append it-->
         // <!--to the list once the button is clicked.-->
 
-        // function addFood(){
-        //    var foodHtml = $("#favorite-food").html();
-        //    console.log(foodHtml);
-        //     var userInput = $("#input").val();
-        //     foodHtml += ("<li>" + userInput + "</li>");
-        //     console.log(foodHtml);
-        // }
 
         $("#add-to-list").click(function(e){
             var userInput = $("#input").val();
@@ -69,15 +62,19 @@
             $("#my-cohort").html(userCohort);
         })
 
-        //     <!--```$xslt-->
-        //     <!--My Cohort: Deimos-->
-        //     <!--```-->
-        //
+
         // <!-- - When 'Highlight' button is clicked, change the background color of the-->
         // <!--cohort name to yellow.-->
-        //
+
+        $("#change-to-red").click(function(){
+            $("#my-cohort").css("background-color", "red");
+        })
         // <!-- - Write some JavaScript that changes the background-color of the container to-->
         // <!--pink after 3 seconds.-->
+
+        setTimeout(function(){
+            $(".container").css("background-color", "pink");
+        }, 3000)
 
 
     })
