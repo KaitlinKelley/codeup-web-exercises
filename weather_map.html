@@ -37,6 +37,11 @@
             text-align: center;
         }
 
+        .card-header {
+            font-size: 22px;
+            text-align: center;
+        }
+
     </style>
 
     <title></title>
@@ -124,12 +129,18 @@
         currentMarker.on('dragend', updateWeatherViaMarker);
 
 
-        map.addControl(
-                new MapboxGeocoder({
-                    accessToken: mapboxToken,
-                    mapboxgl: mapboxgl,
-                }),
-            );
+        var geocoder = new MapboxGeocoder({
+            accessToken: mapboxToken,
+            marker: {
+                color: 'blue',
+                draggable: 'true'
+            },
+            mapboxgl: mapboxgl
+        });
+
+        map.addControl(geocoder);
+
+        geocoder.on("result", updateWeatherViaGeocoder);
 
 
             //this will run as soon as the page loads-----------------------
@@ -166,6 +177,25 @@
         }
 
 
+        function updateWeatherViaGeocoder(result){
+            console.log(result);
+            console.log(result.result);
+            console.log(result.result.center);
+            $.get("https://api.openweathermap.org/data/2.5/onecall", {
+                APPID: openWeatherKey,
+                lat: result.result.center[1],
+                lon: result.result.center[0],
+                units: "imperial",
+                exclude: "minutely,hourly,alerts"
+            }).done(function (data) {
+                createCardHTML(data);
+                reverseGeocode(result.result.center, mapboxToken).then(function(){
+                    $(".current-location-display").text(result.place_name);
+                    console.log(result.place_name);
+                });
+            });
+        }
+
 
         function createCardHTML(weatherObj) {
             var cardHtml = "";
@@ -173,13 +203,13 @@
             for (var i = 0; i <= forecastArray.length -4; i++) {
                 cardHtml += "<div class='card col-2'><h5 class='card-header'>" + convertDate(forecastArray[i].dt) + "</h5>";
                 cardHtml += "<div class='card-body'>";
-                cardHtml += "<h5 class='card-title'>" + "Temperature: " + forecastArray[i].temp.day + "</h5>";
+                cardHtml += "<h5 class='card-title'>" + "Temperature: " + forecastArray[i].temp.day + "° F</h5>";
                 cardHtml += "<p class='card-text'>" + forecastArray[i].weather[0].description + "</p>";
-                cardHtml += "<p class='card-text'>" + forecastArray[i].weather[0].icon + "</p>";
-                cardHtml += "<p class='card-text'>" + "Humidity: " + forecastArray[i].humidity + "</p>";
-                cardHtml += "<p class='card-text'>" + "Wind Speed: " + forecastArray[i].wind_speed + "</p>";
-                cardHtml += "<p class='card-text'>" + "Wind Deg: " + forecastArray[i].wind_deg + "</p>";
-                cardHtml += "<p class='card-text'>" + "Feels like: " + forecastArray[i].feels_like.day + "</p>"
+                cardHtml += "<p class='card-text'><img src='http://openweathermap.org/img/w/" + forecastArray[i].weather[0].icon+ ".png'>" + "</p>";
+                cardHtml += "<p class='card-text'>" + "Humidity: " + forecastArray[i].humidity + "%</p>";
+                cardHtml += "<p class='card-text'>" + "Wind Speed: " + forecastArray[i].wind_speed + "mph</p>";
+                cardHtml += "<p class='card-text'>" + "Wind Deg: " + forecastArray[i].wind_deg + "°</p>";
+                cardHtml += "<p class='card-text'>" + "Feels like: " + forecastArray[i].feels_like.day + "° F</p>"
                 cardHtml += "</div></div>";
             }
 
@@ -188,12 +218,14 @@
 
 
         function convertDate(unixDate){
+            var daysArray = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
             var monthsArray = ["January","February","March","April","May","June","July","August","September","October","November","December"];
             var date = new Date(unixDate*1000);
+            var dayOfWeekNum = Math.floor((unixDate/ 86400) + 4) % 7;
             var year = date.getFullYear();
             var month = monthsArray[date.getMonth()];
             var day = date.getDate();
-            var convertedDate = month + " " + day + ",  " + year;
+            var convertedDate = daysArray[dayOfWeekNum] + ", " + month + " " + day + ",  " + year;
             return convertedDate;
         }
 
