@@ -25,6 +25,11 @@
             color: white;
         }
 
+        .card {
+            text-wrap: none;
+            margin: 1em;
+        }
+
         .card-row {
             justify-content: space-evenly;
         }
@@ -126,9 +131,6 @@
             .addTo(map);
 
 
-        currentMarker.on('dragend', updateWeatherViaMarker);
-
-
         var geocoder = new MapboxGeocoder({
             accessToken: mapboxToken,
             marker: {
@@ -140,6 +142,8 @@
 
         map.addControl(geocoder);
 
+
+        currentMarker.on('dragend', updateWeatherViaMarker);
         geocoder.on("result", updateWeatherViaGeocoder);
 
 
@@ -189,7 +193,7 @@
                 exclude: "minutely,hourly,alerts"
             }).done(function (data) {
                 createCardHTML(data);
-                reverseGeocode(result.result.center, mapboxToken).then(function(){
+                reverseGeocode(result.result.center, mapboxToken).then(function(result){
                     $(".current-location-display").text(result.place_name);
                     console.log(result.place_name);
                 });
@@ -201,7 +205,7 @@
             var cardHtml = "";
             var forecastArray = weatherObj.daily;
             for (var i = 0; i <= forecastArray.length -4; i++) {
-                cardHtml += "<div class='card col-2'><h5 class='card-header'>" + convertDate(forecastArray[i].dt) + "</h5>";
+                cardHtml += "<div class='card col-12 col-sm-2'><h5 class='card-header'>" + convertDate(forecastArray[i].dt) + "</h5>";
                 cardHtml += "<div class='card-body'>";
                 cardHtml += "<h5 class='card-title'>" + "Temperature: " + forecastArray[i].temp.day + "° F</h5>";
                 cardHtml += "<p class='card-text'>" + forecastArray[i].weather[0].description + "</p>";

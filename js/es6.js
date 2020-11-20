@@ -26,11 +26,6 @@ const users = [
     name: 'justin',
     email: 'justin@codeup.com',
     languages: ['html', 'css', 'javascript', 'php']
-  },
-  {
-    name: 'kaitlin',
-    email: 'kaitlin@gmail.com',
-    languages: ["html", "css", "javascript"]
   }
 ];
 
@@ -38,9 +33,9 @@ const users = [
 // to the languages array
 // TODO: replace the `var` keyword with `const`, then try to reassign a variable
 // declared as `const`
-const name = 'your_name_here';
-const email = '';
-const languages = [];
+const name = 'kaitlin';
+const email = 'kaitlin@gmail.com';
+const languages = ['html', 'css', 'javascript'];
 
 
 
@@ -51,6 +46,8 @@ users.push({
   languages
 });
 
+console.log(users);
+
 // TODO: replace `var` with `let` in the following variable declarations
 let emails = [];
 let names = [];
@@ -58,16 +55,19 @@ let names = [];
 // TODO: rewrite the following using arrow functions
 
 
-users.forEach(function(user) {
-  return emails.push(user.email);
-});
+// users.forEach(function(user) {
+//   return emails.push(user.email);
+// });
 users.forEach(user => emails.push(user.email));
 
-
-users.forEach(function(user) {
-  return names.push(user.name);
-});
+//
+// users.forEach(function(user) {
+//   return names.push(user.name);
+// });
 users.forEach(user => names.push(user.name));
+
+console.log(emails);
+console.log(names);
 
 // TODO: replace `var` with `let` in the following declaration
 let developers = [];
@@ -84,6 +84,7 @@ users.forEach(user => {
   // developers.push(name + '\'s email is ' + email + name + ' knows ' + languages.join(', '));
   developers.push(`${name}'s email is ${email}, ${name} knows ${languages.join(",")}`);
 });
+console.log(developers);
 
 // TODO: Use `let` for the following variable
 let list = '<ul>';
