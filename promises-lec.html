@@ -95,20 +95,20 @@
 
     // ============ Basic Example of Promise Creation and Handling
 
-    let goodKid = true;
-
-    // a promise is made to do something
-    //a callback function is passed into the promise
-    //Defining the Promise
-    const getCake = new Promise((resolve, reject) => {
-        if (goodKid) {
-            resolve("Here is some cake");
-        } else {
-            reject("Bad. No cake. :(");
-        }
-    });
-
-    console.log(getCake); // promise object
+    // let goodKid = true;
+    //
+    // // a promise is made to do something
+    // //a callback function is passed into the promise
+    // //Defining the Promise
+    // const getCake = new Promise((resolve, reject) => {
+    //     if (goodKid) {
+    //         resolve("Here is some cake");
+    //     } else {
+    //         reject("Bad. No cake. :(");
+    //     }
+    // });
+    //
+    // console.log(getCake); // promise object
 
     // once the promise is resolved or rejected, take additional action
 
@@ -116,11 +116,11 @@
     // reject and catch go together, resolve and then go together
 
     //Handling the Promise
-    getCake.then((data) => {
-        console.log(data);
-    }).catch((err) => {
-        console.log(err);
-    });
+    // getCake.then((data) => {
+    //     console.log(data);
+    // }).catch((err) => {
+    //     console.log(err);
+    // });
 
 
     // ============ Using Promises with jQuery version 3+
@@ -161,15 +161,22 @@
     //         console.log(message);
     //     });
 
-    // Fetch API GET example
+    // // Fetch API GET example
     //     fetch('https://swapi.co/api/people/1')
     //         .then((response) => {
     //             return response.json();
+    //         //    converts the data from ReadableStream to javascript that we can work with (json)
     //         })
-    //         .then((data) => {
-    //             console.log(data);
-    //         })
-    //         .catch(console.log);
+    //         //Now we use a second .then() to do stuff with the data
+    //         .then((data) => console.log(data))
+    //         .catch((error) => console.log(error));
+
+
+        //Or can be shortened to this:
+        // .then(console.log)
+        // .catch(console.log)
+
+
 
     // Fetch API POST example
 
@@ -204,7 +211,7 @@
 
 
     //  ============ NY Times Articles Based on Forecast of Current Location
-
+    //
     // function getForecast(coord) {
     //     return fetch(`https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/${darkSkyAPI}/${coord.lat},${coord.lng}`)
     //         .then(res => res.json())
@@ -287,6 +294,7 @@
 
 
     // ============ Promise.all()
+    //Takes in an array of promises, then will resolve when all the promises are resolved
 
     // const getCoffee = (type) => {
     //     return processOrder(type);
@@ -321,6 +329,7 @@
 
 
     // ============ Promise.race()
+    //Takes in an array of promises, then will resolve based on whichever promise resolves first
 
     // const color1Promise = new Promise((res) => {
     //     setTimeout(res, 2000, fetch('./data/color.json'));
