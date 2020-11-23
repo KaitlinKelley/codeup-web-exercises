@@ -34,10 +34,12 @@
 
 
         aPromise.then((data) => {
-            console.log(data + " is an even number!");
+            console.log(`${data} is an even number!`);
         }).catch((error) => {
-            console.log(error + " is an odd number!");
+            console.log(`${error} is an odd number!`);
         })
+
+        // could also use console.error(`${error} is an odd number!`)
 
 
 
