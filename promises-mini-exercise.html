@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Promises: Mini Exercise</h1>
+
+    <script>
+        "use strict";
+
+        function successIfEvenUTCSecond() {
+            return new Promise((resolve, reject) => {
+                setTimeout(function() {
+                    const second = new Date().getUTCSeconds();
+                    if (second % 2 === 0) {
+                        resolve(second);
+                    } else {
+                        reject(second);
+                    }
+                }, 2000);
+            });
+        }
+
+        const aPromise = successIfEvenUTCSecond();
+        //In this exercise, even numbers are considered a success, odd numbers are considered a fail
+
+        // TODO: if aPromise resolves, console.log 'VALUE_HERE is an even number!'
+        // TODO: if aPromise rejects, console.error 'VALUE_HERE is an odd number!'
+
+
+        aPromise.then((data) => {
+            console.log(data + " is an even number!");
+        }).catch((error) => {
+            console.log(error + " is an odd number!");
+        })
+
+
+
+
+
+
+    </script>
+
+</body>
+</html>

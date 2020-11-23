@@ -43,25 +43,41 @@ let langUsers = users.filter(function(user){
     return user.languages.length >= 3;
 })
 
+//OR-----------------------------------------------------
+
+
+//ES6
+// let langUsers = users.filter(user => user.languages.length >= 3);
+
 console.log(langUsers);
 
 
 //     2. Use .map to create an array of strings where each element is a user's email address
 
-let emails = users.map(function(user){
+const emails = users.map(function(user){
     return user.email;
 })
 
 console.log(emails);
 
 
+//ES6
+// const emails = users.map(user => user.email);
+
+//OR
+// const emails = users.map(({email}) => email);
+
+
 // 3. Use .reduce to get the total years of experience from the list of users. Once you get the total of years you can use the result to calculate the average.
 
-let yearsOfExp = users.reduce(function(currentSum, currentUser){
-    return currentSum + currentUser.yearsOfExperience;
+const yearsOfExp = users.reduce(function(currentSum, {yearsOfExperience}){
+    return currentSum + yearsOfExperience;
 }, 0);
 
 let average = yearsOfExp/users.length;
+
+//ES6
+// const yearsOfExp = users.reduce((currentSum, currentUser) => currentSum + currentUser.yearsOfExperience, 0);
 
 console.log(average);
 console.log(yearsOfExp);
@@ -75,6 +91,12 @@ let longestEmail = emails.reduce(function(currentLongestEmail, currentUserEmail)
     return currentLongestEmail;
 });
 
+
+//OR---------------------------------------------------------------------
+// const longestEmail = users.reduce((accum, curr) => {
+//     return (curr.email.length > accum.length) ? curr.email : accum;
+// }, "");
+
 console.log(longestEmail);
 
 
@@ -86,17 +108,26 @@ let nameList = users.reduce(function(currentString, currentUser){
 
 console.log(nameList);
 
+//OR---------------------------------------------------------
+
+const userString = users.reduce((accum, {name}) => {
+    return `${accum} ${name}, `;
+}, "Your instructors are: ").slice(0, -2).concat(".");
+
+console.log(userString);
+
 
 // 6. Use .reduce to get the unique list of languages from the list of users.
 
+const allLanguages = users.reduce((accum, current) => {
+    return accum.concat(current.languages);
+//    use .concat() to add these two arrays together
+}, []);
 
-// let listOfLanguages = users.reduce(function(currentList, currentUser){
-//     return currentList + currentUser.languages;
-// }, "")
-//
-// let arrayOfLanguages = listOfLanguages.split(",");
-// let setOfLanguages = new Set(arrayOfLanguages);
-//
-// console.log(listOfLanguages);
-// console.log(arrayOfLanguages);
-// console.log(setOfLanguages);
+const uniqueLanguages = new Set(allLanguages);
+console.log(uniqueLanguages);
+
+const arrUniqueLang = Array.from(uniqueLanguages);
+console.log(arrUniqueLang);
+
+
