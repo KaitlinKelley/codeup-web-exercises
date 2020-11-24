@@ -6,10 +6,10 @@
 //     .then((data) => console.log(data))
 //     .catch(console.error);
 
-fetch("https://api.github.com/users/KaitlinKelley/events/public", {headers:{"Authorization": "token" + gitHubToken}})
-    .then((response) => response.json())
-    .then((data) => console.log(data))
-    .catch(console.error);
+// fetch("https://api.github.com/users/KaitlinKelley/events/public", {headers:{"Authorization": "token" + gitHubToken}})
+//     .then((response) => response.json())
+//     .then((data) => console.log(data))
+//     .catch(console.error);
 
 
 
@@ -17,17 +17,43 @@ fetch("https://api.github.com/users/KaitlinKelley/events/public", {headers:{"Aut
 function getLastPush(username){
     return fetch(`https://api.github.com/users/${username}/events/public`, {headers:{"Authorization": "token" + gitHubToken}})
             .then((response) => response.json())
-            .then((data) => console.log("Last push created at: " + data[1].created_at.slice(11,-1)))
+            .then((data) => console.log("Most recent push created at: " + data[0].created_at.slice(11,-1)))
             .catch(console.error);
 }
 
+function getLastCommitMessage(username){
+    return fetch(`https://api.github.com/users/${username}/events/public`, {headers:{"Authorization": "token" + gitHubToken}})
+        .then((response) => response.json())
+        .then((data) => console.log("The most recent commit message is: " + data[0].payload.commits[0].message))
+        .catch(console.error);
+}
+
 getLastPush("KaitlinKelley");
+getLastCommitMessage("KaitlinKelley");
 
 
-// fetch("https://api.github.com/events", {headers:{"Authorization": "token" + gitHubToken}})
-//     .then((response) => response.json())
-//     .then((data) => console.log(data))
-//     .catch(console.error);
+
+
+//Justin's Solution
+function lastPushDate(username){
+    const url = `https://api.github.com/users/${username}/events`;
+    const options = {headers: {"Authorization": "token" + gitHubToken}};
+    return fetch(url, options)
+        .then(result => result.json())
+        .then(extractDateOfLastPushEvent)
+        .catch(console.error);
+}
+
+function extractDateOfLastPushEvent(events) {
+    for (let event of events){
+        if (event.type === "PushEvent"){
+            return new Date(event.created_at).toDateString();
+        }
+    }
+    return null;
+}
+
+lastPushDate("KaitlinKelley").then(console.log);
 
 
 
